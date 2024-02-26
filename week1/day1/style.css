@@ -1,0 +1,23 @@
+.blue {
+background-color: blue;
+height: 75px;
+width: 55px;
+}
+
+
+.red {
+background-color: red;
+height: 75px;
+width: 55px;
+}
+
+.white {
+    background-color: white;
+    height: 75px;
+    width: 55px;
+}
+
+.flag {
+    display: flex;
+}
+
