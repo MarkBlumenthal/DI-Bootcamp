@@ -1,0 +1,43 @@
+header {
+    background-color: black;
+    color: white;
+}
+
+
+
+.right {
+margin-left: 1000px;
+display: inline-table
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+}
+
+footer {
+    background-color: black;
+    padding-top: 50px;
+    text-align: center;
+    
+}
+
+a {
+    color: white;
+    
+}
+
+.footer-links {
+padding: 10px;
+}

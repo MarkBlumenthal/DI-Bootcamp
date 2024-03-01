@@ -1,54 +1,100 @@
-header {
-background-color: rgb(240, 233, 233);
-margin-bottom: 90%;
-
+nav {
+  background-color: white;
+  position: relative;
 }
 
 
 
-body {
-    background-image: url("pexels-belle-co-847393.jpg");
-  background-size: cover;
-  padding: 0;
-  margin: 0;
-
- position: relative;
+.left button {
+  background-color: white;
+  text-align: center;
+  border: none;
+  float: left;
+  padding: 5px;
+  margin-left: 150px;
     
 }
 
-.boot {
-    margin-right: 35%;
-    padding: none;
+.right button {
+background-color: rgb(10, 184, 253);
+text-align: center;
+border-radius: 5px;
+border: none;
+color: white;
+float: right;
+padding: 5px;
+padding-top: 5px;
+padding-bottom: 5px;
+margin-right: 150px;
+margin-bottom: 5px;
 }
 
-.start {
-    margin-right: 35%;
-    text-align: center;
-    
-    
+
+ img {
+width: 90%;
+max-height: 400px;
+margin: 0;
+height: auto;
+margin-left: 71px;
+
 }
 
-.button {
-    margin-left: 35%;
-    text-align: center;
-    border: none;
-    border-radius: 50%;
+container {
+position: relative;
+text-align: center;
 }
 
-.para {
-    color:white;
-    text-align: center;
-    position: relative;
-    font-size: 40px;
-    
-    
+.content {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: white; 
+  
+}
+
+.text {
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 120px;
+  font-family: sans-serif;
+  padding-top: 155px;
+}
+
+.sign {
+  position: relative;
+  padding-bottom: 150px;
+  text-align: center;
+  
+}
+
+.email button {
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(10, 184, 253);
+  color: white;
+  text-align: center;
+  margin-left: 55%;
+  
+  
 }
 
 footer {
-    background-color: aliceblue;
-    padding-top: 15%;
-    text-align: center;
-   
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  padding: 20px;
+    
+}
+
+.logo {
+margin: 0 10px;
+}
+
+.text2 {
+  color: rgb(129, 127, 127);
+ 
 }
 
 

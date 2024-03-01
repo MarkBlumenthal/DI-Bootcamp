@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template-rows: 50px 150px 25px;
+    gap: 10px;
+    grid-template-columns: minmax(auto, 50%) 1fr 3em;
+}
+
+.element {
+    border: 1px solid black;
+}
+
+.blue {
+    background-color: blue;
+    grid-row: 2 / span
+}
