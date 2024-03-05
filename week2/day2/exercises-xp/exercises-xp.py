@@ -164,9 +164,10 @@ basket.clear()
 
 #while sandwich_orders:
     #sandwich = sandwich_orders.pop(0)  
-    #finished_sandwiches.append(sandwich)  
+    #finished_sandwiches.append(sandwich) 
+    #print(finished_sandwiches) 
     #print(f"I made your {sandwich.lower()}")
-#could not get it
+
 
 
 

@@ -1,15 +1,9 @@
-.sticker-1 {
-    margin-left: 400px;
-    margin-top: 250px;
+.stickers {
+    border: solid;
 }
 
-.sticker-2 {
-    margin-left: 230px;
-}
 
-nav {
-display: flex;
-padding: 20px;
-}
+
+
 
 
