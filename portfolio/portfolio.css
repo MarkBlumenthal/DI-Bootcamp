@@ -1,11 +1,8 @@
-.stickers {
-    border: solid;
-}
-
 .container-fluid {
     background-color: white;
     font-family: fantasy;
     font-size: larger;
+   
 }
 
 a:link {
@@ -14,7 +11,7 @@ a:link {
 }
 
 a:hover {
-    transform: scale(5.2);
+   font-size: xx-large;
 }
 
 .home {
@@ -24,5 +21,26 @@ a:hover {
 .about-me {
     padding-right: 50px;
 }
+
+.stickers {
+    border: solid;
+    margin-top: 350px;
+}
+
+.sticker-2 {
+    display: flex;
+}
+
+.logo {
+    display: flex;
+    padding-top: 40px;
+    margin-left: 10px;
+}
+
+.beavis {
+ padding-right: 40px;
+}
+
+
 
 
