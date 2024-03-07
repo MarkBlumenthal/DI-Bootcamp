@@ -1,4 +1,4 @@
-#Daily-Challenge: tic-tact-toe
+#exercises-mini project: tic-tact-toe
 def initialize_board():
     #"""Creates a 3x3 board initialized with numbers 1 to 9"""
     return [[str(i + j * 3 + 1) for i in range(3)] for j in range(3)]
