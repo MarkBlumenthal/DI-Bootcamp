@@ -3,10 +3,12 @@ def initialize_board():
     return [[str(i + j * 3 + 1) for i in range(3)] for j in range(3)]
 
 def print_board(board):
-    """Prints the board"""
+    """Prints the board with borders"""
+    print("Welcome to Tic-Tac-Toe!\n")
+    print(" +---+---+---+")
     for row in board:
-        print(" | ".join(row))
-        print("-" * 9)
+        print(" | " + " | ".join(row) + " | ")
+        print(" +---+---+---+")
 
 def player_move(board, player):
     """Allows a player to make a move"""
@@ -56,16 +58,18 @@ def play_game():
         
         if check_win(board):
             print_board(board)
-            print(f"Player {current_player} wins!")
+            print(f"Player {current_player} wins! You are King of the World!")
             break
         if check_tie(board):
             print_board(board)
-            print("It's a tie!")
+            print("It's a tie! Lets play agin!")
             break
         
         current_player = 'O' if current_player == 'X' else 'X'
 
 if __name__ == '__main__':
     play_game()
+
+
 
 
