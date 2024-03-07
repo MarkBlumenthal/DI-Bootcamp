@@ -31,3 +31,31 @@
 
 
 #Challenge - 2
+# def find_longest_word(sentence):
+    
+#     words = sentence.split()
+#     longest_word = ''
+#     max_length = 0
+    
+#     for word in words:
+#         length = len(word)
+#         if length > max_length:
+#             longest_word = word
+#             max_length = length
+    
+#     return longest_word
+
+# user_sentence = input("Enter a sentence: ")
+
+# result = find_longest_word(user_sentence)
+# print("Longest word:", result)
+#answer-correct
+
+
+
+
+#Advanced Algorithm
+
+
+
+
