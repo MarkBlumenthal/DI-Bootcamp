@@ -89,127 +89,127 @@
 
 
 
-# #Hangman
-import random
+ # #Hangman
+# import random
 
-def display_word(word, guessed_letters):
-    display = ''
-    for letter in word:
-        if letter in guessed_letters:
-            display += letter
-        else:
-            display += '*'
-    return display
+# def display_word(word, guessed_letters):
+#     display = ''
+#     for letter in word:
+#         if letter in guessed_letters:
+#             display += letter
+#         else:
+#             display += '*'
+#     return display
 
-def display_hangman(incorrect_guesses):
-    stages = [
-        """
-           ------
-           |    |
-           |
-           |
-           |
-           |
-        --------
-        """,
-        """
-           ------
-           |    |
-           |    O
-           |
-           |
-           |
-        --------
-        """,
-        """
-           ------
-           |    |
-           |    O
-           |    |
-           |
-           |
-        --------
-        """,
-        """
-           ------
-           |    |
-           |    O
-           |   /|
-           |
-           |
-        --------
-        """,
-        """
-           ------
-           |    |
-           |    O
-           |   /|\\
-           |
-           |
-        --------
-        """,
-        """
-           ------
-           |    |
-           |    O
-           |   /|\\
-           |   /
-           |
-        --------
-        """,
-        """
-           ------
-           |    |
-           |    O
-           |   /|\\
-           |   / \\
-           |
-        --------
-        """,
+# def display_hangman(incorrect_guesses):
+#     stages = [
+#         """
+#            ------
+#            |    |
+#            |
+#            |
+#            |
+#            |
+#         --------
+#         """,
+#         """
+#            ------
+#            |    |
+#            |    O
+#            |
+#            |
+#            |
+#         --------
+#         """,
+#         """
+#            ------
+#            |    |
+#            |    O
+#            |    |
+#            |
+#            |
+#         --------
+#         """,
+#         """
+#            ------
+#            |    |
+#            |    O
+#            |   /|
+#            |
+#            |
+#         --------
+#         """,
+#         """
+#            ------
+#            |    |
+#            |    O
+#            |   /|\\
+#            |
+#            |
+#         --------
+#         """,
+#         """
+#            ------
+#            |    |
+#            |    O
+#            |   /|\\
+#            |   /
+#            |
+#         --------
+#         """,
+#         """
+#            ------
+#            |    |
+#            |    O
+#            |   /|\\
+#            |   / \\
+#            |
+#         --------
+#         """,
         
-    ]
-    print(stages[incorrect_guesses])
+#     ]
+#     print(stages[incorrect_guesses])
 
-def hangman():
-    wordslist = ['correction', 'childish', 'beach', 'python', 'assertive', 'interference', 'complete', 'share', 'credit card', 'rush', 'south']
-    word = random.choice(wordslist)
-    guessed_letters = []
-    attempts = 6
-    incorrect_guesses = 0
+# def hangman():
+#     wordslist = ['correction', 'childish', 'beach', 'python', 'assertive', 'interference', 'complete', 'share', 'credit card', 'rush', 'south']
+#     word = random.choice(wordslist)
+#     guessed_letters = []
+#     attempts = 6
+#     incorrect_guesses = 0
     
-    print("Welcome to Hangman!")
-    print("Try to guess the word. You have 6 attempts.")
+#     print("Welcome to Hangman!")
+#     print("Try to guess the word. You have 6 attempts.")
 
-    while attempts > 0:
-        print("\nWord:", display_word(word, guessed_letters))
-        display_hangman(incorrect_guesses)
-        guess = input("Guess a letter: ").lower()
+#     while attempts > 0:
+#         print("\nWord:", display_word(word, guessed_letters))
+#         display_hangman(incorrect_guesses)
+#         guess = input("Guess a letter: ").lower()
 
-        if len(guess) != 1 or not guess.isalpha():
-            print("Please enter a single letter.")
-            continue
+#         if len(guess) != 1 or not guess.isalpha():
+#             print("Please enter a single letter.")
+#             continue
 
-        if guess in guessed_letters:
-            print("You already guessed that letter.")
-            continue
+#         if guess in guessed_letters:
+#             print("You already guessed that letter.")
+#             continue
         
-        guessed_letters.append(guess)
+#         guessed_letters.append(guess)
         
-        if guess in word:
-            print("Correct!")
-            if display_word(word, guessed_letters) == word:
-                print("Congratulations! You guessed the word:", word)
-                break
-        else:
-            print("Incorrect!")
-            attempts -= 1
-            incorrect_guesses += 1
-            print("Attempts left:", attempts)
-            if attempts == 0:
-                print("Sorry, you ran out of attempts. The word was:", word)
-                break
+#         if guess in word:
+#             print("Correct!")
+#             if display_word(word, guessed_letters) == word:
+#                 print("Congratulations! You guessed the word:", word)
+#                 break
+#         else:
+#             print("Incorrect!")
+#             attempts -= 1
+#             incorrect_guesses += 1
+#             print("Attempts left:", attempts)
+#             if attempts == 0:
+#                 print("Sorry, you ran out of attempts. The word was:", word)
+#                 break
 
-hangman()
+# hangman()
 
 
 
