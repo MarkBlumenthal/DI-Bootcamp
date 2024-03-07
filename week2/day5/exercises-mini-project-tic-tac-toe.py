@@ -1,9 +1,10 @@
+#Daily-Challenge: tic-tact-toe
 def initialize_board():
-    """Creates a 3x3 board initialized with numbers 1 to 9"""
+    #"""Creates a 3x3 board initialized with numbers 1 to 9"""
     return [[str(i + j * 3 + 1) for i in range(3)] for j in range(3)]
 
 def print_board(board):
-    """Prints the board with borders"""
+   # """Prints the board with borders"""
     print("Welcome to Tic-Tac-Toe!\n")
     print(" +---+---+---+")
     for row in board:
@@ -11,7 +12,7 @@ def print_board(board):
         print(" +---+---+---+")
 
 def player_move(board, player):
-    """Allows a player to make a move"""
+    #"""Allows a player to make a move"""
     while True:
         try:
             move = int(input(f"Player {player}, choose a position (1-9): "))
@@ -28,8 +29,7 @@ def player_move(board, player):
             print("Invalid input. Please enter a number.")
 
 def check_win(board):
-    """Checks if there is a win on the board"""
-    # Check rows, columns and diagonals
+    #"""Checks if there is a win on the board"""
     lines = []
     lines.extend(board)  # Rows
     lines.extend([list(x) for x in zip(*board)])  # Columns
@@ -42,7 +42,7 @@ def check_win(board):
     return None
 
 def check_tie(board):
-    """Checks if the board is full without a winner"""
+    #"""Checks if the board is full without a winner"""
     for row in board:
         if any(col not in ['X', 'O'] for col in row):
             return False
@@ -62,14 +62,27 @@ def play_game():
             break
         if check_tie(board):
             print_board(board)
-            print("It's a tie! Lets play agin!")
+            print("It's a tie!")
             break
         
         current_player = 'O' if current_player == 'X' else 'X'
 
+def ask_replay():
+    #"""Asks the players if they want to play again"""
+    while True:
+        response = input("Do you want to play again? (yes/no): ").lower()
+        if response in ['yes', 'y']:
+            return True
+        elif response in ['no', 'n']:
+            return False
+        else:
+            print("Invalid input. Please answer 'yes' or 'no'.")
+
 if __name__ == '__main__':
-    play_game()
-
-
+    while True:
+        play_game()
+        if not ask_replay():
+            print("OK, but I know you will be back.")
+            break
 
 
