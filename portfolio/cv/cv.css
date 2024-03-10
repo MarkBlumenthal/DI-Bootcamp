@@ -1,4 +1,6 @@
-
+.custom-gradient {
+    background: linear-gradient(10deg, #080808, #646464);
+  }
 
 
 

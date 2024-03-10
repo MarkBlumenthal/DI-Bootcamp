@@ -37,7 +37,12 @@ a:hover {
     margin-left: 100px;
 }
 
-
+@media (max-width: 768px) {
+    .pics-1 {
+        padding: 10px;
+        display: inline;
+    }
+}
 
 
 
