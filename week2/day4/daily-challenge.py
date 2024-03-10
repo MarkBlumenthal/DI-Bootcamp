@@ -28,7 +28,7 @@ def decrypt_matrix(matrix_str):
 decrypted_message = decrypt_matrix(matrix_str)
 
 print(decrypted_message.replace('r ', 'r'))
-#answer - This is Matric
+#answer - This is Matrix
 
 
 
