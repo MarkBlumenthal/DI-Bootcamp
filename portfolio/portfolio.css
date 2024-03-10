@@ -2,8 +2,9 @@
     background-color: white;
     font-family: fantasy;
     font-size: larger;
-   
+    
 }
+
 
 a:link {
     color: black;
@@ -27,23 +28,21 @@ a:hover {
     padding-right: 50px;
 }
 
-.stickers {
-    border: solid;
-    margin-top: 380px;
-    
-}
-
 .beavis {
-   margin-right: 955px;
+    margin-left: 125px;
 }
 
-.sticker-2 {
-    display: flex;
+.pics-1 {
+    margin-top: 350px;
+    margin-left: 100px;
 }
 
-.logo {
-    margin-top: 35px;
-}
+
+
+
+
+
+
 
 
 
