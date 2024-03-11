@@ -27,3 +27,42 @@ a:hover {
     padding-right: 50px;
 }
 
+.text {
+    text-align: center;
+}
+
+.container {
+    position: relative; /* Set position to relative */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-images {
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* Set position to relative */
+}
+
+.top-images > div {
+    margin: 0 400px; /* Add horizontal margin to each top image container */
+}
+
+.bottom-images {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 850px; /* Adjust this value as needed */
+    position: absolute; /* Set position to absolute */
+    top: 100%; /* Place the bottom images 50% from the top */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+}
+
+.bottom-images div {
+    margin: 0 50px;
+}
+
+
+
+
+

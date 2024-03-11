@@ -1,7 +1,9 @@
 #exercise-3: dogs domesticated
 
-# from dog import Dog
+# from dog import Dog  
 # import random
+
+# # Assuming you have created instances of Dog class in the previous code and stored them in variables dog1, dog2, etc.
 
 # class PetDog(Dog):
 #     def __init__(self, name, age, weight):
@@ -25,3 +27,27 @@
 #             print(random.choice(tricks))
 #         else:
 #             print(f"{self.name} is not trained yet.")
+
+# # Assuming you have created instances of Dog class in the previous code and stored them in variables dog1, dog2, etc.
+# dog1 = Dog("Klaus", 7, 50)
+# dog2 = Dog("Piglet", 10, 25)
+# dog3 = Dog("Shredder", 3, 10)
+
+# # Creating an instance of PetDog
+# my_pet = PetDog("Your Pet", 2, 10)
+
+# # Training the pet
+# my_pet.train()
+
+# # Doing a trick
+# my_pet.do_a_trick()
+
+# # Playing with other dogs
+# my_pet.play(dog1, dog2, dog3)
+
+
+
+
+
+
+
