@@ -1,0 +1,29 @@
+.container-fluid {
+    background-color: white;
+    font-family: fantasy;
+    font-size: larger; 
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+    transition: font-size 0.7s;
+}
+
+a:visited {
+    color: black; 
+  }
+  
+
+a:hover {
+   font-size: xx-large;
+}
+
+.home {
+    padding-left: 50px;
+}
+
+.about-me {
+    padding-right: 50px;
+}
+
