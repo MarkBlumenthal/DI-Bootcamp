@@ -6,10 +6,10 @@
 #     def __init__(self, radius_or_diameter):
 #         if radius_or_diameter <= 0:
 #             raise ValueError("Radius or diameter must be positive.")
-#         if radius_or_diameter > 1000000:  # Limiting the size to avoid memory issues
+#         if radius_or_diameter > 100:  
 #             raise ValueError("Radius or diameter is too large.")
         
-#         if radius_or_diameter > 1000:  # Assuming a diameter above 1000 is a diameter, else it's a radius
+#         if radius_or_diameter > 100:  # Assuming a diameter above 1000 is a diameter, else it's a radius
 #             self.diameter = radius_or_diameter
 #             self.radius = radius_or_diameter / 2
 #         else:
