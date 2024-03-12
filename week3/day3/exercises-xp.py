@@ -153,29 +153,29 @@
 
 
 #exercise-7: faker module
-from faker import Faker
-import random
+# from faker import Faker
+# import random
 
-# Initialize Faker
-fake = Faker()
+# # Initialize Faker
+# fake = Faker()
 
-# Create an empty list called users
-users = []
+# # Create an empty list called users as dictionaries
+# users = []
 
-# Function to add new dictionaries to the users list
-def add_user():
-    user = {
-        'name': fake.name(),
-        'address': fake.address(),
-        'language_code': random.choice(['en', 'fr', 'es', 'de'])  # Example language codes
-    }
-    users.append(user)
+# # Function to add new dictionaries to the users list
+# def add_user():
+#     user = {
+#         'name': fake.name(),
+#         'address': fake.address(),
+#         'language_code': random.choice(['en', 'fr', 'es', 'de'])  # Example language codes
+#     }
+#     users.append(user)
 
-# Generating 5 fake users
-for _ in range(5):
-    add_user()
+# # Generating 5 fake users
+# for _ in range(5):
+#     add_user()
 
-# Printing the list of users
-for user in users:
-    print(user)
+# # Printing the list of users
+# for user in users:
+#     print(user)
 
