@@ -74,6 +74,78 @@
 
 
 
+import random
+
+class DeckOfCards:
+    def __init__(self):
+        self.cards = []
+        self.reset()
+
+    def reset(self):
+        suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+        values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+        self.cards = [{'suit': suit, 'value': value} for suit in suits for value in values]
+
+    def shuffle(self):
+        random.shuffle(self.cards)
+
+    def deal(self):
+        if not self.cards:
+            return None
+        return self.cards.pop()
+
+def card_ascii(card):
+    if card['value'] == '10':
+        value = '10'
+    else:
+        value = card['value'][0]  # Get the first character of the value
+    suit_symbol = {
+        'Hearts': '\u2665',
+        'Diamonds': '\u2666',
+        'Clubs': '\u2663',
+        'Spades': '\u2660'
+    }[card['suit']]
+    return f"""
+┌───────┐
+│ {value:<2}    │
+│       │
+│   {suit_symbol}   │
+│       │
+│    {value:>2} │
+└───────┘
+"""
+
+def deal_and_display_card(deck):
+    card = deck.deal()
+    if card:
+        card_description = f"{card['value']} of {card['suit']}"
+        print(f"Dealt card: {card_description}")
+
+        card_art = card_ascii(card)
+        print(card_art)
+
+    else:
+        print("Deck of Cards is empty.")
+
+def main():
+    print("Welcome to the Deck Of Cards!")
+    while True:
+        deck = DeckOfCards()
+        deck.shuffle()
+        while True:
+            user_input = input("Do you want another card? (yes/no): ").lower()
+            if user_input == 'yes':
+                deal_and_display_card(deck)
+            elif user_input == 'no':
+                print("Will goodbye, have a nice life!")
+                return
+            else:
+                print("Don't be stupid, it's a yes or no question. Please enter 'yes' or 'no'.")
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 
