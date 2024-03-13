@@ -136,11 +136,15 @@ def main():
             user_input = input("Do you want another card? (yes/no): ").lower()
             if user_input == 'yes':
                 deal_and_display_card(deck)
+                if not deck.cards:  # Check if the deck is empty
+                    print("Deck of Cards is empty.")
+                    break  # Break out of the inner loop if the deck is empty
             elif user_input == 'no':
-                print("Will goodbye, have a nice life!")
+                print("Well goodbye, have a nice life!")
                 return
             else:
                 print("Don't be stupid, it's a yes or no question. Please enter 'yes' or 'no'.")
+
 
 if __name__ == "__main__":
     main()
