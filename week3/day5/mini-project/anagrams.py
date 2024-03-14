@@ -2,12 +2,12 @@ from anagram_checker import AnagramChecker
 
 def validate_input(word):
     # Check if only one word is entered
-    if len(word.split()) > 1:
+    if len(word.split()) > 1: #This line checks if more than one word has been entered. It splits the input word by whitespace using the split() method and then checks if the resulting list has a length greater than 1. If so, it prints an error message and returns False, indicating that the input is invalid.
         print("Error: Only one word is allowed.")
         return False
     
     # Check if only alphabetic characters are entered
-    if not word.isalpha():
+    if not word.isalpha(): #isalpha() method returns True if all characters in the string are alphabetic
         print("Error: Only alphabetic characters are allowed.")
         return False
     
