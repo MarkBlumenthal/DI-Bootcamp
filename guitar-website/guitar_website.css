@@ -1,0 +1,48 @@
+
+.navbar-custom {
+    background-color: black;
+  }
+  .navbar-custom .navbar-nav .nav-link {
+    color: white;
+  }
+  .navbar-custom .btn-purple {
+    background-color: purple;
+    color: white;
+  }
+
+
+#video-banner {
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+    overflow: hidden;
+  }
+  
+  #video-banner .carousel-inner {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #video-banner .carousel-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Custom styling for video controls */
+  #video-banner .carousel-control-prev,
+  #video-banner .carousel-control-next {
+    width: 5%;
+    color: #070707;
+  }
+  
+  #video-banner .carousel-control-prev-icon,
+  #video-banner .carousel-control-next-icon {
+    filter: invert(1);
+  }
+  
+  @media (max-width: 767px) {
+    #video-banner {
+      height: 300px; /* Adjust height for smaller screens */
+    }
+  }
+  
