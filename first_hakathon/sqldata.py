@@ -24,7 +24,7 @@ def close_connection():
     conn.close()
 
 # Example usage
-player_name = "John"
-character_name = "Character 1"
+player_name = ""
+character_name = ""
 insert_player_data(player_name, character_name)
 close_connection()

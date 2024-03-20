@@ -2,6 +2,7 @@
 # from tkinter import messagebox, simpledialog
 # from PIL import Image, ImageTk
 # from datetime import datetime
+# from sqldata import insert_player_data, close_connection
 
 # # Define a class to encapsulate the Demon Slayer game (OOP)
 # class DemonSlayerGame:
@@ -116,6 +117,7 @@
 #     # Select a character
 #     def select_character(self, character):
 #         player_name = self.ask_for_name()
+#         insert_player_data(player_name, character)  # Insert player data into the database
 #         print("Player Name:", player_name)
 #         print("Selected character:", character)
 
@@ -132,4 +134,11 @@
 # # Check if the script is being run directly
 # if __name__ == "__main__":
 #     main()
+
+
+
+
+
+
+
 

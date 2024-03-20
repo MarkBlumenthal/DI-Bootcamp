@@ -14,9 +14,12 @@
 --     IS_TEMPLATE = False;
 
 
--- CREATE TABLE demon_slayer_game_data (
---     player_id SERIAL PRIMARY KEY,
+-- CREATE TABLE player_data (
+--     id SERIAL PRIMARY KEY,
 --     player_name VARCHAR(255),
---     character_selection VARCHAR(255),
---     game_time TIMESTAMP
+--     character_name VARCHAR(255),
+--     play_time TIMESTAMP
 -- );
+
+-- SELECT * FROM player_data;
+
