@@ -2,7 +2,7 @@
 # from tkinter import messagebox, simpledialog
 # from PIL import Image, ImageTk
 # from datetime import datetime
-# from sqldata import insert_player_data, close_connection
+# import psycopg2
 
 # # Define a class to encapsulate the Demon Slayer game (OOP)
 # class DemonSlayerGame:
@@ -10,6 +10,15 @@
 #         # Initialize the game with a window
 #         self.window = window
 #         self.window.title("Welcome to Demon Slayer")
+
+#         # Connect to the PostgreSQL database
+#         self.conn = psycopg2.connect(
+#             dbname="Demon Slayer",
+#             user="postgres",
+#             password="arsenal_1",
+#             host="localhost"
+#         )
+#         self.cur = self.conn.cursor()
 
 #         # Initialize start and end times
 #         self.start_time = None
@@ -66,6 +75,7 @@
 #             # Display game duration
 #             self.output_text.insert(tk.END, f"Game Duration: {duration}\n")
 #             self.window.destroy()
+#             self.close_connection()  # Close the database connection when quitting
 
 #     # Perform actions
 #     def duck_dive_roll(self):
@@ -99,31 +109,53 @@
 #     def create_character_selection(self):
 #         character_label = tk.Label(self.window, text="Select Your Character:")
 #         character_label.pack()
+
 #         # Define characters and their images
 #         characters = [
 #             ("images/Inosuke_anime.png", "Character 1"),
 #             ("images/Tanjiro_colored_body_4.png", "Character 2"),
 #             ("images/Zenitsu_anime.png", "Character 3")
 #         ]
+
+#         # Create a frame for character buttons
+#         character_frame = tk.Frame(self.window)
+#         character_frame.pack()
+
 #         # Create buttons for each character
 #         for image_path, character_name in characters:
 #             character_image = Image.open(image_path)
 #             character_image = character_image.resize((100, 100))
 #             character_photo = ImageTk.PhotoImage(character_image)
-#             character_button = tk.Button(self.window, image=character_photo, command=lambda name=character_name: self.select_character(name))
+#             character_button = tk.Button(character_frame, image=character_photo, command=lambda name=character_name: self.select_character(name))
 #             character_button.photo = character_photo
 #             character_button.pack(side=tk.LEFT, padx=10)
+
+#         # Position the frame under the label
+#         character_frame.place(relx=0.5, rely=0.5, anchor=tk.CENTER, y=150)
 
 #     # Select a character
 #     def select_character(self, character):
 #         player_name = self.ask_for_name()
-#         insert_player_data(player_name, character)  # Insert player data into the database
+#         self.insert_player_data(player_name, character)  # Insert player data into the database
 #         print("Player Name:", player_name)
 #         print("Selected character:", character)
+
+#     # Insert player data into the database
+#     def insert_player_data(self, player_name, character_name):
+#         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+#         sql = "INSERT INTO player_data (player_name, character_name, play_time) VALUES (%s, %s, %s)"
+#         data = (player_name, character_name, timestamp)
+#         self.cur.execute(sql, data)
+#         self.conn.commit()
 
 #     # Ask for player's name
 #     def ask_for_name(self):
 #         return simpledialog.askstring("Player's Name", "Enter your name:")
+
+#     # Close the database connection
+#     def close_connection(self):
+#         self.cur.close()
+#         self.conn.close()
 
 # # Main function to create the window and run the game
 # def main():
@@ -137,6 +169,61 @@
 
 
 
+
+
+class DemonSlayerGame:
+    def __init__(self, window):
+        # Initialize other attributes...
+
+        # Define storyline segments
+        self.storyline_segments = [
+            "You wake up in a forest, surrounded by darkness. You hear whispers of demons lurking nearby.",
+            "As you journey deeper into the forest, you encounter a wounded traveler pleading for help.",
+            "In the distance, you spot a flicker of light. Could it be a safe haven or a trap set by demons?"
+        ]
+
+        # Initialize current story segment index
+        self.current_segment_index = 0
+
+    def start_game(self):
+        # Present the storyline
+        self.output_text.insert(tk.END, f"{self.storyline_segments[self.current_segment_index]}\n")
+
+        # Offer player choices based on the current segment
+        if self.current_segment_index == 0:
+            self.offer_choices(["Help the traveler", "Ignore the traveler and proceed cautiously"])
+        elif self.current_segment_index == 1:
+            self.offer_choices(["Investigate the light source", "Continue deeper into the forest"])
+        elif self.current_segment_index == 2:
+            self.offer_choices(["Approach the light source", "Stay hidden and observe"])
+
+    def offer_choices(self, choices):
+        # Present player choices
+        self.output_text.insert(tk.END, "What will you do?\n")
+        for i, choice in enumerate(choices):
+            self.output_text.insert(tk.END, f"{i+1}. {choice}\n")
+
+        # Wait for player input
+        self.player_choice(choices)
+
+    def player_choice(self, choices):
+        # Get player input and handle choices
+        def handle_choice(choice):
+            if choice.isdigit() and 1 <= int(choice) <= len(choices):
+                choice_index = int(choice) - 1
+                self.output_text.insert(tk.END, f"You chose: {choices[choice_index]}\n")
+                # Handle choice consequences...
+                # Advance to the next segment or continue the game flow
+                self.current_segment_index += 1
+                self.start_game()
+            else:
+                self.output_text.insert(tk.END, "Invalid choice. Please enter the number corresponding to your choice.\n")
+
+        # Prompt player for choice
+        choice_prompt = simpledialog.askstring("Player Choice", "Enter the number of your choice:")
+        handle_choice(choice_prompt)
+
+    # Other methods...
 
 
 
