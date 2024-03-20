@@ -171,59 +171,6 @@
 
 
 
-class DemonSlayerGame:
-    def __init__(self, window):
-        # Initialize other attributes...
-
-        # Define storyline segments
-        self.storyline_segments = [
-            "You wake up in a forest, surrounded by darkness. You hear whispers of demons lurking nearby.",
-            "As you journey deeper into the forest, you encounter a wounded traveler pleading for help.",
-            "In the distance, you spot a flicker of light. Could it be a safe haven or a trap set by demons?"
-        ]
-
-        # Initialize current story segment index
-        self.current_segment_index = 0
-
-    def start_game(self):
-        # Present the storyline
-        self.output_text.insert(tk.END, f"{self.storyline_segments[self.current_segment_index]}\n")
-
-        # Offer player choices based on the current segment
-        if self.current_segment_index == 0:
-            self.offer_choices(["Help the traveler", "Ignore the traveler and proceed cautiously"])
-        elif self.current_segment_index == 1:
-            self.offer_choices(["Investigate the light source", "Continue deeper into the forest"])
-        elif self.current_segment_index == 2:
-            self.offer_choices(["Approach the light source", "Stay hidden and observe"])
-
-    def offer_choices(self, choices):
-        # Present player choices
-        self.output_text.insert(tk.END, "What will you do?\n")
-        for i, choice in enumerate(choices):
-            self.output_text.insert(tk.END, f"{i+1}. {choice}\n")
-
-        # Wait for player input
-        self.player_choice(choices)
-
-    def player_choice(self, choices):
-        # Get player input and handle choices
-        def handle_choice(choice):
-            if choice.isdigit() and 1 <= int(choice) <= len(choices):
-                choice_index = int(choice) - 1
-                self.output_text.insert(tk.END, f"You chose: {choices[choice_index]}\n")
-                # Handle choice consequences...
-                # Advance to the next segment or continue the game flow
-                self.current_segment_index += 1
-                self.start_game()
-            else:
-                self.output_text.insert(tk.END, "Invalid choice. Please enter the number corresponding to your choice.\n")
-
-        # Prompt player for choice
-        choice_prompt = simpledialog.askstring("Player Choice", "Enter the number of your choice:")
-        handle_choice(choice_prompt)
-
-    # Other methods...
 
 
 
