@@ -1,0 +1,14 @@
+[
+    {
+        "image_path": "images/Rabbi.jpeg",
+        "name": "Character 1"
+    },
+    {
+        "image_path": "images/soldier.jpeg",
+        "name": "Character 2"
+    },
+    {
+        "image_path": "images/Israeli girl.png",
+        "name": "Character 3"
+    }
+]

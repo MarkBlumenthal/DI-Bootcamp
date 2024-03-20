@@ -21,5 +21,5 @@
 --     play_time TIMESTAMP
 -- );
 
--- SELECT * FROM player_data;
+SELECT * FROM player_data;
 
