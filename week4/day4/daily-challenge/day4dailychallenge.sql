@@ -7,4 +7,4 @@
 --     population INTEGER
 -- );
 
-SELECT * FROM countries;
+-- SELECT * FROM countries;
