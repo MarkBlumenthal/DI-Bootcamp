@@ -1,6 +1,6 @@
-// exercise1 - part one
+// // exercise1 - part one
 
-// // #1
+// // // #1
 // const people = ["Greg", "Mary", "Devon", "James"];
 // // Find the index of "Greg"
 // const index = people.indexOf("Greg");
