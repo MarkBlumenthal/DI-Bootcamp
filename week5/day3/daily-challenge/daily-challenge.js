@@ -2,33 +2,33 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     const planets = [
-        { name: "Gandulf", color: "yellow", moons: [] },
-        { name: "Legolas", color: "blue", moons: [{ name: "Moon" }] },
-        { name: "Gimli", color: "red", moons: [{ name: "Axe" }, { name: "Hi" }] },
-        { name: "Aragon", color: "orange", moons: new Array(1).fill({}) }, 
-        { name: "Boromir", color: "gold", moons: new Array(2).fill({}) },  
+        { name: "Gandulf", color: "grey", moons: 0 },
+        { name: "Gimli", color: "yellow", moons: 1 },
+        { name: "Aragon", color: "blue", moons: 1 },
+        { name: "Frodo", color: "pink", moons: 2 },
+        { name: "Legolas", color: "orange", moons: 1 },
+        { name: "Mark", color: "gold", moons: 2 },
+        { name: "Earth", color: "green", moons: 2 },
     ];
 
     const section = document.querySelector('.listPlanets');
 
-    planets.forEach(planet => {
-        // Create the planet div
+    planets.forEach((planet, index) => {
         const planetDiv = document.createElement('div');
         planetDiv.classList.add('planet');
-        planetDiv.style.backgroundColor = planet.color;
+        planetDiv.classList.add(`planet-${index}`); // Unique class for each planet for custom styles
+        planetDiv.style.backgroundColor = planet.color; // Set background color
         
-        // Append the planet to the section
         section.appendChild(planetDiv);
 
-        // Create moons for each planet
-        planet.moons.forEach(moon => {
+        // Create moons if there are any
+        for (let i = 0; i < planet.moons; i++) {
             const moonDiv = document.createElement('div');
             moonDiv.classList.add('moon');
-            // Positioning the moon randomly around the planet for visual effect
-            moonDiv.style.right = `${Math.random() * 70}px`;
-            moonDiv.style.top = `${Math.random() * 70}px`;
 
+            moonDiv.style.left = `${i * 35}px`;
+            moonDiv.style.right = `${i * 35}px`;
             planetDiv.appendChild(moonDiv);
-        });
+        }
     });
 });
