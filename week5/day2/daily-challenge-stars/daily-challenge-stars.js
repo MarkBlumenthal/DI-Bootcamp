@@ -25,6 +25,6 @@
 //     for (let star = 1; star <= row; star++) {
 //         line += "* "; // Append a star and a space for each iteration of the inner loop
 //     }
-//     console.log(line.trim()); // Print the line after trimming the trailing space
+//     console.log(line.trim()); //  this Prints the line after trimming the trailing space
 // }
 
