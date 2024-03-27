@@ -69,11 +69,11 @@
 
 
 // function myMove() {
-//     var elem = document.getElementById("animate");
-//     var pos = 0;
-//     var containerWidth = document.getElementById("container").offsetWidth;
-//     var elemWidth = elem.offsetWidth;
-//     var id = setInterval(frame, 1); // Move 1px every 1 millisecond
+//     let elem = document.getElementById("animate");
+//     let pos = 0;
+//     let containerWidth = document.getElementById("container").offsetWidth;
+//     let elemWidth = elem.offsetWidth;
+//     let id = setInterval(frame, 1); // Move 1px every 1 millisecond
 
 //     function frame() {
 //         if (pos >= (containerWidth - elemWidth)) {
