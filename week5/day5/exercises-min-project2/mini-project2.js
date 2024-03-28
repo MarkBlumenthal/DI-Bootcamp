@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to generate the color palette
     colors.forEach(color => {
-        const colorDiv = document.createElement('div');
+        let colorDiv = document.createElement('div');
         colorDiv.classList.add('color');
         colorDiv.style.backgroundColor = color;
         colorDiv.addEventListener('click', () => {
