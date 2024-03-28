@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
- // Add click event for single-click fill (new functionality)
+ // Add click event for single-click 
  cell.addEventListener('click', () => {
     if (selectedColor) { // Ensure a color is selected
         cell.style.backgroundColor = selectedColor;
