@@ -2,6 +2,16 @@ body {
     font-family: Arial, sans-serif;
     background-color: #ff4d4d; /* Same as the image */
   }
+
+  #header {
+    text-align: center; /* Centers the text of the heading */
+  }
+  
+  h2 {
+    color: white; /* Sets the text color of the heading to white */
+    margin: 0; /* Removes default margin */
+    padding: 20px 0; /* Adds some vertical padding for spacing */
+  }
   
   .container {
     width: 300px;
@@ -14,6 +24,7 @@ body {
   
   #taskForm {
     margin-bottom: 20px;
+    
   }
   
   .listTasks {
@@ -48,21 +59,23 @@ body {
 
 
   #clearTasks {
-    background-color: #f44336; /* Red color */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 2px;
+    color: #ff4d4d; /* Sets the text color of the button to blue */
+    border: none; /* Removes the border of the button */
+    background: none; /* Removes the default background, if desired */
     cursor: pointer;
-    border-radius: 4px;
+    padding: 5px 10px; /* Adjust padding as needed */
+    display: inline-block; /* To apply padding and centering */
+    margin-top: 10px;
   }
   
 
-
+  #taskForm button {
+    color: blue; /* Sets the text color of the button to blue */
+    border: none; /* Removes the border of the button */
+    background: none; /* Optional: Removes the default background */
+    cursor: pointer;
+    padding: 5px 10px; /* Adjust padding as needed */
+  }
 
 
   

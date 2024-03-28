@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const tasks = [];
     let taskId = 0;
+
+      // Create the heading element
+  const headerDiv = document.getElementById('header');
+  const heading = document.createElement('h2');
+  heading.textContent = 'TO-DO LIST';
+  headerDiv.appendChild(heading);
   
     const taskForm = document.getElementById('taskForm');
     const listTasks = document.querySelector('.listTasks');
