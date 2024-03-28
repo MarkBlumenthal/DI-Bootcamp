@@ -1,7 +1,7 @@
 function isAnagram(str1, str2) {
-    // Normalize the strings: remove whitespace and convert to lowercase
-    const normalizedStr1 = str1.replace(/\s+/g, '').toLowerCase();
-    const normalizedStr2 = str2.replace(/\s+/g, '').toLowerCase();
+    // Normalize the strings and then remove whitespace and convert to lowercase
+    let normalizedStr1 = str1.replace(/\s+/g, '').toLowerCase();
+    let normalizedStr2 = str2.replace(/\s+/g, '').toLowerCase();
     
     // Early return if the lengths are different
     if (normalizedStr1.length !== normalizedStr2.length) {
@@ -9,8 +9,8 @@ function isAnagram(str1, str2) {
     }
     
     // Compare sorted strings
-    const sortedStr1 = normalizedStr1.split('').sort().join('');
-    const sortedStr2 = normalizedStr2.split('').sort().join('');
+    let sortedStr1 = normalizedStr1.split('').sort().join('');
+    let sortedStr2 = normalizedStr2.split('').sort().join('');
     
     return sortedStr1 === sortedStr2;
 }
