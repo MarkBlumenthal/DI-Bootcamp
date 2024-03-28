@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedColor = '';
     let mouseDown = false;
 
+    
+
     // Log the action
     function logAction(action) {
         console.log(action);
