@@ -6,32 +6,37 @@
     gap: 20px;
     border: 2px solid #333;
     border-radius: 10px;
+    
 }
 
 #palette-container, #grid-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 #palette {
     display: grid;
     grid-template-columns: repeat(3, 40px); /* 3 colors per row */
-     gap: 10px;
+    gap: 10px;
     padding: 10px;
     border: 2px solid #666;
     border-radius: 10px;
+    
+    
 } 
 
 .color {
     width: 40px;
     height: 40px;
     cursor: pointer;
+    border: 2px solid #000; /* Add a border around each color */
 }
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(10, 40px); /* Adjust based on your preference */
+    grid-template-columns: repeat(10, 40px); 
     gap: 5px;
     margin-top: 20px;
     border: 2px solid #666;
@@ -43,7 +48,10 @@
     height: 40px;
     border: 1px solid #000;
     cursor: pointer; 
+    
  } 
+
+
 
 
 
