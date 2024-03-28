@@ -3,17 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let palette = document.getElementById('palette');
     let grid = document.getElementById('grid');
     let selectedColor = '';
-    let mouseDown = false; // this track whether the mouse is pressed down
+    let mouseDown = false;
 
-    // Detect mouse down and up events on the whole document to handle dragging outside the grid
-    document.addEventListener('mousedown', (e) => {
-        // Prevent default text selection behavior while dragging
-        e.preventDefault();
-        mouseDown = true;
-    });
-    document.addEventListener('mouseup', () => {
-        mouseDown = false;
-    });
+    // Log the action
+    function logAction(action) {
+        console.log(action);
+    }
 
     // Generate color palette
     colors.forEach(color => {
@@ -22,27 +17,30 @@ document.addEventListener('DOMContentLoaded', () => {
         colorDiv.style.backgroundColor = color;
         colorDiv.addEventListener('click', () => {
             selectedColor = color;
+            logAction(`Selected color: ${color}`);
         });
         palette.appendChild(colorDiv);
+    });
+
+    // Enable drawing while holding mouse down
+    document.body.addEventListener('mousedown', () => {
+        mouseDown = true;
+    });
+
+    document.body.addEventListener('mouseup', () => {
+        mouseDown = false;
     });
 
     // Generate grid
     for (let i = 0; i < 100; i++) {
         let cell = document.createElement('div');
         cell.classList.add('cell');
-        
-        // Change to listen for mouseover
-        cell.addEventListener('mouseover', () => {
+        cell.addEventListener('mousemove', () => {
             if (mouseDown && selectedColor) {
                 cell.style.backgroundColor = selectedColor;
+                logAction(`Colored a cell with: ${selectedColor}`);
             }
         });
-
-        // Also allow cell to be colored by clicking
-        cell.addEventListener('click', () => {
-            cell.style.backgroundColor = selectedColor;
-        });
-        
         grid.appendChild(cell);
     }
 });

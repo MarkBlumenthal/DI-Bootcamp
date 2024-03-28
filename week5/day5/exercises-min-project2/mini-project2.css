@@ -1,7 +1,26 @@
-#palette {
-    margin-bottom: 20px;
+
+#app-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+#palette-container, #grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#palette {
+    display: grid;
+    grid-template-columns: repeat(3, 40px); /* 3 colors per row */
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid #666;
+    border-radius: 10px;
 }
 
 .color {
@@ -12,8 +31,11 @@
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(10, 40px);
+    grid-template-columns: repeat(10, 40px); /* Adjust based on your preference */
     gap: 5px;
+    margin-top: 20px;
+    border: 2px solid #666;
+    border-radius: 10px;
 }
 
 .cell {
