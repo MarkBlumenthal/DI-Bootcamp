@@ -59,7 +59,7 @@ body {
 
 
   #clearTasks {
-    color: #ff4d4d; /* Sets the text color of the button to blue */
+    color: #ff4d4d; 
     border: none; /* Removes the border of the button */
     background: none; /* Removes the default background, if desired */
     cursor: pointer;
