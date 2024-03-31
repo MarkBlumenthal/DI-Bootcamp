@@ -39,3 +39,7 @@ const cloneGroceries = () => {
 // Explanations:
 // 1. When `user` is set to `client`, it copies the value of `client` at that moment because strings are primitive types in JavaScript, which are passed by value. Changing `client` afterward does not affect `user`.
 // 2. When `shopping` is set to `groceries`, it doesn't create a new object. Instead, it just points to the same memory location as `groceries`. Any changes to `shopping` reflect on `groceries` because objects in JavaScript are passed by reference.
+
+
+displayGroceries();
+cloneGroceries();
