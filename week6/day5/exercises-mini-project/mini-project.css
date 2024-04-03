@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
@@ -25,9 +26,9 @@ input[type="text"] {
 .robot-card {
     margin: 10px;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #070707;
     border-radius: 5px;
-    background-color: white;
+    background-color: rgb(35, 150, 70);
     width: 200px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
