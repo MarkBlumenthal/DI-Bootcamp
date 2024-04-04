@@ -1,18 +1,29 @@
 function isAnagram(str1, str2) {
     // Normalize the strings: remove whitespace and convert to lowercase
-    let normalizedStr1 = str1.replace(/\s+/g, '').toLowerCase();
-    let normalizedStr2 = str2.replace(/\s+/g, '').toLowerCase();
+    let Str1 = str1.replace(/\s+/g, '').toLowerCase();
+    let Str2 = str2.replace(/\s+/g, '').toLowerCase();
 
-    // Early return if the lengths are different
-    if (normalizedStr1.length !== normalizedStr2.length) {
+    if (Str1.length !== Str2.length) {
         return false;
     }
-    
-    // Compare sorted strings
-    let sortedStr1 = normalizedStr1.split('').sort().join('');
-    let sortedStr2 = normalizedStr2.split('').sort().join('');
-    
-    return sortedStr1 === sortedStr2;
+
+    let charCount = {};
+
+    // Count characters in the first string
+    for (let char of Str1) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+
+    // Subtract count for characters in the second string
+    for (let char of Str2) {
+        if (!charCount[char]) {
+            return false; // Found a char in str2 not in str1, or more instances than in str1
+        }
+        charCount[char] -= 1;
+    }
+
+    // If all counts are zero, strings are anagrams
+    return Object.values(charCount).every(count => count === 0);
 }
 
 console.log(isAnagram("Astronomer", "Moon starer")); 
