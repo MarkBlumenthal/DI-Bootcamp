@@ -97,7 +97,7 @@
 //   // The first function: Converts the JSON string to a JS object
 //   function toJs() {
 //     return new Promise((resolve, reject) => {
-//       const morseJS = JSON.parse(morse);
+//       let morseJS = JSON.parse(morse);
 //       if (Object.keys(morseJS).length === 0) {
 //         reject('The Morse JavaScript object is empty.');
 //       } else {
@@ -109,8 +109,8 @@
 //   // The second function: Converts a word to its Morse code representation
 //   function toMorse(morseJS) {
 //     return new Promise((resolve, reject) => {
-//       const userInput = prompt("Please enter a word or a sentence:").toLowerCase();
-//       const morseTranslation = [];
+//       let userInput = prompt("enter a word:").toLowerCase();
+//       let morseTranslation = [];
   
 //       for (const char of userInput) {
 //         if (!morseJS[char]) {
