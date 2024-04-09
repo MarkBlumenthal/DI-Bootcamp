@@ -46,6 +46,12 @@ document.addEventListener('DOMContentLoaded', function () {
             showError();
             return;
         }
+
+        console.log('Name:', character.name);
+        console.log('Height:', character.height);
+        console.log('Gender:', character.gender);
+        console.log('Birth Year:', character.birth_year);
+
         document.getElementById('name').textContent = character.name;
         document.getElementById('height').textContent = character.height;
         document.getElementById('gender').textContent = character.gender;
@@ -62,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
             let response = await fetch(url);
             if (!response.ok) throw new Error('Home world not found');
             let homeWorld = await response.json();
+            console.log('Home World:', homeWorld.result.properties.name);
+            
             document.getElementById('home-world').textContent = homeWorld.result.properties.name;
         } catch (error) {
             document.getElementById('home-world').textContent = 'Unknown';
@@ -75,3 +83,11 @@ document.addEventListener('DOMContentLoaded', function () {
         displayCharacter(character);
     });
 });
+
+
+
+
+
+
+
+

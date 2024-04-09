@@ -1,8 +1,8 @@
 body {
-    background: url('path_to_your_star_background_image.jpg') no-repeat center center fixed;
+    background: url('https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp') no-repeat center center fixed;
     background-size: cover;
-    font-family: 'Arial', sans-serif;
-    color: yellow;
+    font-family: 'Helvetica Neue';
+    color: rgb(240, 240, 233);
     text-align: center;
     margin: 0;
     padding: 0;
@@ -17,13 +17,9 @@ body {
     border: 3px solid yellow;
     padding: 20px;
     border-radius: 10px;
-    width: 400px;
+    width: 600px;
   }
   
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
   
   #character-info h2 {
     margin: 10px 0;
@@ -31,7 +27,9 @@ body {
   }
   
   #character-info p {
-    margin: 5px 0;
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.6;
   }
   
   button {
@@ -41,7 +39,7 @@ body {
     padding: 10px 20px;
     font-size: 1rem;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 40px;
     transition: background-color 0.3s ease;
   }
   
@@ -50,7 +48,7 @@ body {
   }
   
   #loading, #error {
-    color: yellow;
+    color: rgb(233, 233, 223);
     font-size: 1.2rem;
     margin-top: 20px;
   }
@@ -63,3 +61,6 @@ body {
     margin-right: 10px;
   }
   
+
+
+
