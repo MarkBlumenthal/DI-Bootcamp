@@ -20,7 +20,7 @@ label {
   font-weight: bold;
 }
 
-select, input[type="number"] {
+input[type="number"], input[list] {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -49,9 +49,8 @@ button:hover {
   border: 1px solid #d0e9c6;
   color: #3c763d;
   border-radius: 5px;
-  display: none; 
+  display: none;
 }
-
 
 nav {
   display: flex;

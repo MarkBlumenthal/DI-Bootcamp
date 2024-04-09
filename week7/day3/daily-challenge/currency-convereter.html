@@ -12,14 +12,14 @@
 
 <div>
   <label for="fromCurrency">From:</label>
-  <select id="fromCurrency">
-  </select>
+  <input list="fromCurrencyOptions" id="fromCurrency" name="fromCurrency" placeholder="Type or select a currency">
+  <datalist id="fromCurrencyOptions"></datalist>
 </div>
 
 <div>
   <label for="toCurrency">To:</label>
-  <select id="toCurrency">
-  </select>
+  <input list="toCurrencyOptions" id="toCurrency" name="toCurrency" placeholder="Type or select a currency">
+  <datalist id="toCurrencyOptions"></datalist>
 </div>
 
 <div>
@@ -32,8 +32,6 @@
 
 <div id="convertedAmount"></div>
 
-
-
 <nav>
   <img src="money-2.jpeg" height="200" width="200" alt="money">
   <img src="money-2.jpeg" height="200" width="200" alt="money">
@@ -43,7 +41,6 @@
   <img src="money-2.jpeg" height="200" width="200" alt="money">
   <img src="money-2.jpeg" height="200" width="200" alt="money">
 </nav>
-
 
 <script src="currency-converter.js"></script>
 </body>
