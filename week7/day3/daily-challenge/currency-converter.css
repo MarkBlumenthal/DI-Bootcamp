@@ -24,10 +24,11 @@ input[type="number"], input[list] {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #0a0a0a;
   border-radius: 5px;
   box-sizing: border-box;
 }
+
 
 button {
   cursor: pointer;
@@ -57,3 +58,8 @@ nav {
   margin-left: 40px;
   margin-top: 40px;
 }
+
+
+
+
+
