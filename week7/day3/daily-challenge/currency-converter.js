@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let amountInput = document.getElementById('amount');
     let convertButton = document.getElementById('convertButton');
     let switchButton = document.getElementById('switchButton');
+    let clearButton = document.getElementById('clearButton'); 
     let convertedAmount = document.getElementById('convertedAmount');
   
     let apiKey = '38236311085f1daa9468eeb6';
@@ -66,17 +67,30 @@ document.addEventListener('DOMContentLoaded', function() {
         // Automatically trigger a recalculation when switching
         convertCurrency();
     }
+
+    // Clear input fields and output
+    function clearFields() {
+        fromCurrency.value = '';
+        toCurrency.value = '';
+        amountInput.value = '';
+        convertedAmount.style.display = 'none';
+        convertedAmount.textContent = '';
+    }
   
     fetchCurrencies();
   
     convertButton.addEventListener('click', () => {
-      console.log('Convert button clicked');
-      convertCurrency();
+        console.log('Convert button clicked');
+        convertCurrency();
     });
     
     switchButton.addEventListener('click', () => {
-      console.log('Switch button clicked');
-      switchCurrencies();
+        console.log('Switch button clicked');
+        switchCurrencies();
     });
-  });
-  
+
+    clearButton.addEventListener('click', () => {
+        console.log('Clear button clicked');
+        clearFields();
+    });
+});
