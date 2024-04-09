@@ -1,44 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Star Wars Character Finder</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-<link rel="stylesheet" href="starwars-webapp.css"> 
+	<title>Star Wars Web App</title>
+
+	<link rel="stylesheet" type="text/css" href="starwars-webapp.css">
+
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 </head>
 <body>
 
+	<div class="wrapper">
+
+
+		<div class="logo"></div>
+
+		<div class="info-container">
+
+			<h1 id="name"></h1>
+
+			<p id="height"></p>
+
+			<p id="gender"></p>
+
+			<p id="birth-year"></p>
+
+			<p id="home-world"></p>
+			
+		</div>
+
+		<button type="button" id="button" name="button">Find Someone</button>
+
+
+	</div>
 
 
 
-<div class="container">
-    <img src="2560px-Star_Wars_Logo.svg.png" height="200" width="350" alt="star wars logo">
-    <div id="character-info">
-        <h2 id="name"></h2>
-        <p>Height: <span id="height"></span></p>
-        <p>Gender: <span id="gender"></span></p>
-        <p>Birth Year: <span id="birth-year"></span></p>
-        <p>Home World: <span id="home-world"></span></p>
-    </div>
+<script type="text/javascript" src="starwars-webapp.js"></script>
 
-    <button id="find-character">Find Someone</button>
-    
-    <div id="loading" class="hidden">
-        <i class="fa-solid fa-spinner fa-spin"></i> Loading...
-    </div>
-    
-    <div id="error" class="hidden">
-        Oh No! That person isn't available.
-    </div>
-</div>
-
-
-
-
-
-
-
-<script src="starwars-webapp.js"></script> 
 </body>
 </html>
+
