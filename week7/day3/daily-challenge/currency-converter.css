@@ -63,3 +63,7 @@ button:hover {
 }
 
 
+nav {
+  display: flex;
+  margin-left: 40px;
+}
