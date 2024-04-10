@@ -1,4 +1,4 @@
-const chalk = require('chalk');
+// import chalk from 'chalk';
 
-console.log(chalk.blue('Hello, world!'));
-console.log(chalk.red.bgWhite.bold('This is a colorful message!'));
+// console.log(chalk.blue('Hello, world!'));
+// console.log(chalk.red.bgWhite.bold('This is a colorful message!'));
