@@ -3,11 +3,7 @@
 		.img-container {
 
 			text-align: center;
-
 			margin-top: -150px;
-
-
-
 
 		}
 
@@ -29,12 +25,10 @@
 			height: 80px;
 			width: 80px;
 			font-size: 15px;
-
 			position: absolute;
 			margin-top: -193px;
-			margin-left: 953px;
+			margin-left: 1026px;
 			cursor: pointer;
-
 			outline: none;
 		}
 
@@ -45,10 +39,7 @@
 			margin-top: -580px;
 			width: 230px;
 			height: 230px;
-
 			position: absolute;
-
-			/* border: 1px solid red; */
 
 		}
 
@@ -62,12 +53,7 @@
 			text-align: center;
 			font-size: 200px;
 			color: black;
-
 			position: absolute;
-
-			/* border: 1px solid red; */
-
-
 
 		}
 
@@ -87,12 +73,8 @@
 
 			width: 70px;
 			height: 70px;
-
 			margin-top: 60px;
-
 			margin-left: -30px;
-
-
 			position: absolute;
 
 		}
@@ -102,8 +84,7 @@
 
 			position: absolute;
 			margin-top: -168px;
-			margin-left: 380px;
-			
+			margin-left: 455px;
 
 		}
 
@@ -133,7 +114,6 @@
 		.instructions{
 
 			position: absolute;
-
 			margin-left: 945px;
 			margin-top: -100px;
 		}
