@@ -1,0 +1,57 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Quiz</title>
+</head>
+<body>
+    <h1>Trivia Quiz Game</h1>
+    <div id="question"></div>
+    <input type="text" id="answer" placeholder="Your answer">
+    <button onclick="submitAnswer()">Submit Answer</button>
+    <div id="feedback"></div>
+    <div id="finalScore" style="display:none;">
+        Your final score is: <span id="score"></span> out of <span id="totalQuestions"></span>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let userScore = 0;
+
+        async function fetchQuestion() {
+            const response = await fetch('/quiz');
+            const data = await response.json();
+            document.getElementById('question').innerText = data.question;
+        }
+
+        async function submitAnswer() {
+            const answer = document.getElementById('answer').value;
+            const response = await fetch('/quiz', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ answer: answer })
+            });
+            const data = await response.json();
+            document.getElementById('feedback').innerText = data.feedback;
+
+            if (data.nextQuestion) {
+                document.getElementById('question').innerText = data.nextQuestion;
+                document.getElementById('answer').value = ''; // Clear input for next question
+            } else if (data.finalScore) {
+                document.getElementById('finalScore').style.display = 'block';
+                document.getElementById('score').innerText = data.score;
+                document.getElementById('totalQuestions').innerText = data.totalQuestions;
+                document.getElementById('question').style.display = 'none'; // Hide question area
+                document.getElementById('answer').style.display = 'none'; // Hide answer input
+            }
+        }
+
+        fetchQuestion(); // Fetch the first question when the page loads
+    </script>
+</body>
+</html> -->
+
+

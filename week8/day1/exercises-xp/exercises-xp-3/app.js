@@ -5,13 +5,13 @@
 // // Middleware to parse JSON bodies
 // app.use(express.json());
 
-// // Import routes
-// const todoRoutes = require('./routes/todos');
-// app.use('/todos', todoRoutes);
+// // Import routes for books
+// const bookRoutes = require('./routes/books');
+// app.use('/books', bookRoutes);
 
-// // Route for the root URL
+// // Root route
 // app.get('/', (req, res) => {
-//     res.send('Welcome to the To-Do List API! Use /todos to interact with the API.');
-//   });
+//     res.send('Welcome to the Book Management API. Use /books to interact with the API.');
+// });
 
 // app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
