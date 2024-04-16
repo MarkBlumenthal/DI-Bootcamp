@@ -7,8 +7,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.listen(3001, () => {
-  console.log("run on 3001");
+app.listen(3002, () => {
+  console.log("run on 3002");
 });
 
 /**
