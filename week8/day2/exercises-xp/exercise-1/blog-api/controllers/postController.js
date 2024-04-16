@@ -1,60 +1,72 @@
-// controllers/postController.js
-const db = require('../modules/db');
+const db = require('../modules/db');  
 
+// Function to get all posts
 const getAllPosts = async (req, res) => {
     try {
-        const result = await db.query('SELECT * FROM posts');
-        res.status(200).json(result.rows);
+        const { rows } = await db.knex.select('*').from('posts');
+        res.json(rows);
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        console.error('Read error:', err);
+        res.status(500).json({ error: 'Error fetching posts' });
     }
 };
 
+
+
+// Function to get a single post by ID
 const getPostById = async (req, res) => {
     try {
-        const result = await db.query('SELECT * FROM posts WHERE id = $1', [req.params.id]);
-        if (result.rows.length === 0) {
+        const { rows } = await db.knex('posts').where({ id: req.params.id });
+        if (rows.length === 0) {
             return res.status(404).json({ message: 'Post not found' });
         }
-        res.status(200).json(result.rows[0]);
+        res.json(rows[0]);
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        console.error('Read error:', err);
+        res.status(500).json({ error: 'Error fetching post' });
     }
 };
 
+// Function to create a new post
 const createPost = async (req, res) => {
-    const { title, content } = req.body;
     try {
-        const result = await db.query('INSERT INTO posts (title, content) VALUES ($1, $2) RETURNING *', [title, content]);
-        res.status(201).json(result.rows[0]);
+        const { title, content } = req.body;  
+        const result = await db.knex('posts').insert({ title, content }).returning('*');
+        res.status(201).json(result);
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        console.error('Insert error:', err);
+        res.status(500).json({ error: 'Error creating post' });
     }
 };
 
+// Function to update a post
 const updatePost = async (req, res) => {
-    const { id } = req.params;
-    const { title, content } = req.body;
     try {
-        const result = await db.query('UPDATE posts SET title = $1, content = $2 WHERE id = $3 RETURNING *', [title, content, id]);
-        if (result.rows.length === 0) {
+        const { title, content } = req.body;
+        const { id } = req.params;
+        const result = await db.knex('posts').where({ id }).update({ title, content }).returning('*');
+        if (result.length === 0) {
             return res.status(404).json({ message: 'Post not found' });
         }
-        res.status(200).json(result.rows[0]);
+        res.json(result[0]);
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        console.error('Update error:', err);
+        res.status(500).json({ error: 'Error updating post' });
     }
 };
 
+// Function to delete a post
 const deletePost = async (req, res) => {
     try {
-        const result = await db.query('DELETE FROM posts WHERE id = $1 RETURNING *', [req.params.id]);
-        if (result.rows.length === 0) {
+        const { id } = req.params;
+        const result = await db.knex('posts').where({ id }).del().returning('*');
+        if (result.length === 0) {
             return res.status(404).json({ message: 'Post not found' });
         }
-        res.status(200).json({ message: 'Post deleted' });
+        res.json({ message: 'Post deleted successfully' });
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        console.error('Delete error:', err);
+        res.status(500).json({ error: 'Error deleting post' });
     }
 };
 
@@ -65,7 +77,4 @@ module.exports = {
     updatePost,
     deletePost
 };
-
-
-
 
