@@ -29,9 +29,9 @@ module.exports = function(bcrypt, pool) {
         try {
             const client = await pool.connect();
             const result = await client.query('SELECT * FROM users WHERE username = $1', [username]);
+            client.release();
     
             if (result.rows.length === 0) {
-                client.release();
                 return res.status(404).send({ message: "Username is not registered" });
             }
     
@@ -42,12 +42,12 @@ module.exports = function(bcrypt, pool) {
             } else {
                 res.status(401).send({ error: "Invalid password" });
             }
-    
-            client.release();
         } catch (err) {
-            res.status(500).send({ error: "Database operation failed" });
+            console.error('Error executing query', err.stack);
+            res.status(500).send({ error: "Database operation failed", detail: err.message });
         }
     });
+    
     
 
     router.get('/users', async (req, res) => {
@@ -98,7 +98,7 @@ module.exports = function(bcrypt, pool) {
     });
     
 
-    // Implement other routes similarly...
+
 
     return router;
 };
