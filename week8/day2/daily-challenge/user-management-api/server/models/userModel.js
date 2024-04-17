@@ -11,9 +11,21 @@ const knex = require('knex')({
   
 
   module.exports = {
-    createUser: (username, password) => {
-      return knex('users').insert({ username, password });
+    createUser: async (username, email, password) => {
+      // Start a transaction
+      return knex.transaction(async trx => {
+        // Insert the username and email into the users table and get the inserted user's ID
+        const [userId] = await trx('users').insert({ username, email }).returning('id');
+    
+        // Insert the user ID and hashed password into the hashpwd table
+        await trx('hashpwd').insert({ id: userId, password });
+    
+        // Return the user's ID, username, and email
+        return { id: userId, username, email };
+      });
     },
+    
+    
     findUserByUsername: (username) => {
       return knex('users').where({ username }).first();
     },
@@ -27,3 +39,5 @@ const knex = require('knex')({
       return knex('users').where({ id }).update(userData);
     },
   };
+
+
