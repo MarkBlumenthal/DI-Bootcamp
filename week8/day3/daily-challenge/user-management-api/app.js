@@ -1,3 +1,5 @@
+require('dotenv').config(); 
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
@@ -10,7 +12,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 const pool = new Pool({
-    connectionString: 'Your_Database_URL_Here'
+    user: process.env.PGUSER,
+    host: process.env.PGHOST,
+    database: process.env.PGDATABASE,
+    password: process.env.PGPASSWORD,
+    port: process.env.PGPORT || 5432
 });
 
 const router = require('./routes')(bcrypt, pool);
@@ -19,5 +25,7 @@ app.use('/', router);
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
+
+
 
 
