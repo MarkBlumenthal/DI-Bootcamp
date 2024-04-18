@@ -103,3 +103,8 @@ module.exports = function(bcrypt, pool) {
     return router;
 };
 
+
+
+
+
+

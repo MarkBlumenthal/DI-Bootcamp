@@ -5,29 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Register</title>
 <script>
+    function submitForm(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('message').innerText = data.message || data.error;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('message').innerText = 'Failed to send request.';
+        });
+    }
+
     function checkForm() {
         let inputs = document.querySelectorAll('input');
-        let canSubmit = Array.from(inputs).every(input => input.value.trim() !== '');
-        document.getElementById('submit').disabled = !canSubmit;
+        document.getElementById('submit').disabled = !Array.from(inputs).every(input => input.value.trim() !== '');
     }
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        let inputs = document.querySelectorAll('input');
-        inputs.forEach(input => {
-            input.addEventListener('keyup', checkForm);
-            input.addEventListener('change', checkForm);
-        });
-        checkForm(); 
-    });
-    </script>
-    
-    
+</script>
 </head>
 <body>
-
     <h1>Register:</h1>
-
-    <form action="/register" method="post" oninput="checkForm()">
+    <form onsubmit="submitForm(event)" oninput="checkForm()">
         <input type="text" name="name" placeholder="Name" required>
         <input type="text" name="lastName" placeholder="Last Name" required>
         <input type="email" name="email" placeholder="Email" required>
@@ -35,11 +45,9 @@
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit" id="submit" disabled>Register</button>
     </form>
-    
- 
-    
-
-
-
+    <div id="message"></div>
 </body>
-</html>
+</html
+
+
+
