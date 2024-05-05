@@ -7,19 +7,19 @@ function App() {
         <div className="App">
             <Carousel>
                 <div>
-                    <img src="https://via.placeholder.com/600x400.png?text=Hong+Kong" alt="Hong Kong" />
+                    <img src="/c1cklkyp6ms02tougufx.webp" alt="Hong Kong" />
                     <p className="legend">Hong Kong</p>
                 </div>
                 <div>
-                    <img src="https://via.placeholder.com/600x400.png?text=Macao" alt="Macao" />
+                    <img src="/e8fnw35p6zgusq218foj.webp" alt="Macao" />
                     <p className="legend">Macao</p>
                 </div>
                 <div>
-                    <img src="https://via.placeholder.com/600x400.png?text=Japan" alt="Japan" />
+                    <img src="/jrfyzvgzvhs1iylduuhj.jpg" alt="Japan" />
                     <p className="legend">Japan</p>
                 </div>
                 <div>
-                    <img src="https://via.placeholder.com/600x400.png?text=Las+Vegas" alt="Las Vegas" />
+                    <img src="/liw377az16sxmp9a6ylg.webp" alt="Las Vegas" />
                     <p className="legend">Las Vegas</p>
                 </div>
             </Carousel>
@@ -28,4 +28,5 @@ function App() {
 }
 
 export default App;
+
 
