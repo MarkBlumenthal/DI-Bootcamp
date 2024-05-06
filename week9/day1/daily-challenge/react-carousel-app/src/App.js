@@ -1,10 +1,10 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel CSS
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function App() {
     return (
-        <div className="App">
+        <div className="App" style={{ width: '50%', margin: 'auto' }}> 
             <Carousel>
                 <div>
                     <img src="/c1cklkyp6ms02tougufx.webp" alt="Hong Kong" />
@@ -28,5 +28,3 @@ function App() {
 }
 
 export default App;
-
-
