@@ -42,14 +42,14 @@ function App() {
       />
       <div className="entered-info">
         <h2>Entered information:</h2>
-        <p>Your Name: {fullName ? fullName : "N/A"}</p>
+        <p>Your Name: {fullName ? fullName : ""}</p>
         <p>Your Age: {formData.age}</p>
         <p>Your Gender: {formData.gender}</p>
         <p>Your Destination: {formData.destination}</p>
         <p>Your dietary restrictions:</p>
-        <p>Lactose Free: {formData.lactoseFree ? "Yes" : "No"}</p>
-        <p>Nuts Free: {formData.nutsFree ? "Yes" : "No"}</p>
-        <p>Vegan: {formData.vegan ? "Yes" : "No"}</p>
+        <p>**Lactose Free: {formData.lactoseFree ? "Yes" : "No"}</p>
+        <p>**Nuts Free: {formData.nutsFree ? "Yes" : "No"}</p>
+        <p>**Vegan: {formData.vegan ? "Yes" : "No"}</p>
       </div>
     </div>
   );
