@@ -60,6 +60,10 @@ function FormComponent({ formData, handleChange, handleSubmit }) {
         onChange={handleChange}
         className="destination-input"
       >
+    
+        <option value="" disabled>
+          -- Please choose a destination --
+        </option>
         <option value="Japan">Japan</option>
         <option value="Thailand">Thailand</option>
         <option value="Brazil">Brazil</option>

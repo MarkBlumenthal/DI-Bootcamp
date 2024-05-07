@@ -8,7 +8,7 @@ function App() {
     lastName: '',
     age: '',
     gender: 'male',
-    destination: 'Japan',
+    destination: '',
     lactoseFree: false,
     nutsFree: false,
     vegan: false
