@@ -26,10 +26,8 @@ function ShopScreen() {
 }
 
 async function postJsonData() {
- 
-  const webhookUrl = "https://webhook.site/3c2e7144-aea8-42b3-80d3-f47770fd657e";
+  const webhookUrl = "https://webhook.site/3c2e7144-aea8-42b3-80d3-f47770fd657e"; // Replace with your own Webhook URL
 
-  
   const data = {
     key1: 'myusername',
     email: 'mymail@gmail.com',
@@ -41,18 +39,14 @@ async function postJsonData() {
   try {
     const response = await fetch(webhookUrl, {
       method: 'POST',
+      mode: 'no-cors', // Prevents CORS errors but returns an opaque response
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
     });
 
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-
-    const responseData = await response.json();
-    console.log('Response from Webhook:', responseData);
+    console.log('Request sent successfully.');
 
   } catch (error) {
     console.error('Error sending data:', error);
@@ -64,22 +58,41 @@ function App() {
     <BrowserRouter>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
-          <NavLink className="nav-link" to="/" end activeClassName="active">
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+          >
             Home
           </NavLink>
-          <NavLink className="nav-link" to="/profile" activeClassName="active">
+          <NavLink
+            to="/profile"
+            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+          >
             Profile
           </NavLink>
-          <NavLink className="nav-link" to="/shop" activeClassName="active">
+          <NavLink
+            to="/shop"
+            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+          >
             Shop
           </NavLink>
-          <NavLink className="nav-link" to="/example1" activeClassName="active">
+          <NavLink
+            to="/example1"
+            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+          >
             Example1
           </NavLink>
-          <NavLink className="nav-link" to="/example2" activeClassName="active">
+          <NavLink
+            to="/example2"
+            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+          >
             Example2
           </NavLink>
-          <NavLink className="nav-link" to="/example3" activeClassName="active">
+          <NavLink
+            to="/example3"
+            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+          >
             Example3
           </NavLink>
         </div>
@@ -133,7 +146,7 @@ function App() {
             </ErrorBoundary>
           }
         />
-      
+        {/* Catch-all route for undefined paths */}
         <Route
           path="*"
           element={
@@ -143,7 +156,6 @@ function App() {
           }
         />
       </Routes>
-     
       <div className="container">
         <button className="btn btn-primary mt-3" onClick={postJsonData}>
           Send JSON Data
@@ -154,4 +166,3 @@ function App() {
 }
 
 export default App;
-
