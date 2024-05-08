@@ -25,6 +25,40 @@ function ShopScreen() {
   throw new Error('Something went wrong in the Shop!');
 }
 
+async function postJsonData() {
+ 
+  const webhookUrl = "https://webhook.site/3c2e7144-aea8-42b3-80d3-f47770fd657e";
+
+  
+  const data = {
+    key1: 'myusername',
+    email: 'mymail@gmail.com',
+    name: 'Isaac',
+    lastname: 'Doe',
+    age: 27
+  };
+
+  try {
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const responseData = await response.json();
+    console.log('Response from Webhook:', responseData);
+
+  } catch (error) {
+    console.error('Error sending data:', error);
+  }
+}
+
 function App() {
   return (
     <BrowserRouter>
@@ -99,7 +133,7 @@ function App() {
             </ErrorBoundary>
           }
         />
-        {/* Catch-all route for undefined paths */}
+      
         <Route
           path="*"
           element={
@@ -109,10 +143,15 @@ function App() {
           }
         />
       </Routes>
+     
+      <div className="container">
+        <button className="btn btn-primary mt-3" onClick={postJsonData}>
+          Send JSON Data
+        </button>
+      </div>
     </BrowserRouter>
   );
 }
 
 export default App;
-
 
