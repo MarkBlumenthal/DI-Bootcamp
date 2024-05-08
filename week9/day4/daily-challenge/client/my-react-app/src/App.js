@@ -1,4 +1,3 @@
-// src/App.js
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -8,7 +7,7 @@ class App extends Component {
     inputValue: '',
   };
 
-  // Fetch the greeting message when the component mounts
+
   async componentDidMount() {
     try {
       const response = await fetch('http://localhost:5000/api/hello');
@@ -19,12 +18,12 @@ class App extends Component {
     }
   }
 
-  // Update the input value state
+
   handleChange = (event) => {
     this.setState({ inputValue: event.target.value });
   };
 
-  // Submit the form, sending the input value to the server
+  
   handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -50,7 +49,7 @@ class App extends Component {
             value={this.state.inputValue}
             onChange={this.handleChange}
           />
-          <button type="submit">Send</button>
+          <button type="submit">Submit</button>
         </form>
         <p>{this.state.responseMessage}</p>
       </div>

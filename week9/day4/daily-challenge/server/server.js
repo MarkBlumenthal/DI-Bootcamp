@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -6,16 +5,17 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 5000;
 
-// Enable CORS and parse JSON bodies
+
 app.use(cors());
 app.use(bodyParser.json());
 
-// Define a GET route at /api/hello
 app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Hello From Express' });
-});
+    const message = 'Hello From Express\nPost to server:';
+    
+    res.json({ message });
+  });
 
-// Define a POST route at /api/world
+
 app.post('/api/world', (req, res) => {
   console.log('Received POST request body:', req.body);
   res.json({
@@ -23,7 +23,6 @@ app.post('/api/world', (req, res) => {
   });
 });
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
