@@ -3,7 +3,10 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ErrorBoundary from './ErrorBoundary';
 import PostList from './PostList';
-import './App.css'; 
+import Example1 from './Example1';
+import Example2 from './Example2';
+import Example3 from './Example3';
+import './App.css';
 
 function HomeScreen() {
   return (
@@ -36,6 +39,15 @@ function App() {
           <NavLink className="nav-link" to="/shop" activeClassName="active">
             Shop
           </NavLink>
+          <NavLink className="nav-link" to="/example1" activeClassName="active">
+            Example1
+          </NavLink>
+          <NavLink className="nav-link" to="/example2" activeClassName="active">
+            Example2
+          </NavLink>
+          <NavLink className="nav-link" to="/example3" activeClassName="active">
+            Example3
+          </NavLink>
         </div>
       </nav>
       <Routes>
@@ -64,6 +76,31 @@ function App() {
           }
         />
         <Route
+          path="/example1"
+          element={
+            <ErrorBoundary>
+              <Example1 />
+            </ErrorBoundary>
+          }
+        />
+        <Route
+          path="/example2"
+          element={
+            <ErrorBoundary>
+              <Example2 />
+            </ErrorBoundary>
+          }
+        />
+        <Route
+          path="/example3"
+          element={
+            <ErrorBoundary>
+              <Example3 />
+            </ErrorBoundary>
+          }
+        />
+        {/* Catch-all route for undefined paths */}
+        <Route
           path="*"
           element={
             <ErrorBoundary>
@@ -77,4 +114,5 @@ function App() {
 }
 
 export default App;
+
 
