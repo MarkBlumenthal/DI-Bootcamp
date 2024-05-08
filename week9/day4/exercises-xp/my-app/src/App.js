@@ -2,14 +2,20 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ErrorBoundary from './ErrorBoundary';
+import PostList from './PostList';
 import './App.css'; 
 
 function HomeScreen() {
-  return <h1>Home</h1>;
+  return (
+    <div>
+      <h1>Home</h1>
+      <PostList />
+    </div>
+  );
 }
 
 function ProfileScreen() {
-  return <h1>Profile</h1>;
+  return <h1>Profile Screen</h1>;
 }
 
 function ShopScreen() {
@@ -57,7 +63,6 @@ function App() {
             </ErrorBoundary>
           }
         />
-        
         <Route
           path="*"
           element={
@@ -72,3 +77,4 @@ function App() {
 }
 
 export default App;
+
