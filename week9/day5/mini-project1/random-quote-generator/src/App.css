@@ -1,0 +1,44 @@
+html, body {
+  transition: background-color 1s ease; 
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+.quotebox-container {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white; 
+  transition: background-color 1s ease; 
+}
+
+.quotebox-header, .quotebox-author {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  transition: color 1s ease; 
+}
+
+.quotebox-author {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.quotebox-button {
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; 
+}
