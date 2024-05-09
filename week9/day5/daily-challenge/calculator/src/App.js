@@ -15,7 +15,7 @@ function App() {
     let n1 = parseFloat(num1);
     let n2 = parseFloat(num2);
     let res;
-    
+
     switch (operation) {
       case 'add':
         res = n1 + n2;
@@ -35,10 +35,18 @@ function App() {
     setResult(res);
   };
 
+
+  const resetCalculator = () => {
+    setNum1('');
+    setNum2('');
+    setOperation('add');
+    setResult(null);
+  };
+
   return (
     <div className="App">
       <h1>Calculator</h1>
-      <h3>Lets do Math</h3>
+      <h3>Lets do Math!</h3>
       <div>
         <input
           type="number"
@@ -59,6 +67,7 @@ function App() {
           <option value="divide">Divide</option>
         </select>
         <button onClick={calculateResult}>Calculate!</button>
+        <button onClick={resetCalculator}>Reset</button>
       </div>
       {result !== null && <h2>{result}</h2>}
     </div>
@@ -66,4 +75,5 @@ function App() {
 }
 
 export default App;
+
 
