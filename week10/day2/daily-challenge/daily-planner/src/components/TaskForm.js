@@ -11,7 +11,7 @@ const TaskForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
     if (task.trim()) {  // Ensure that empty tasks aren't added
-      dispatch(addTask(task));
+      dispatch(addTask({ day: 'Today', task }));  // Ensure you're passing the correct object structure expected by your reducer
       setTask('');  // Reset task input after submission
     }
   };
@@ -30,4 +30,5 @@ const TaskForm = () => {
 };
 
 export default TaskForm;
+
 
