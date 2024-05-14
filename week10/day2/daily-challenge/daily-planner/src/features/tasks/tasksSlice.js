@@ -22,9 +22,8 @@ const tasksSlice = createSlice({
     deleteTask(state, action) {
       const { date, index } = action.payload;
       state.tasks[date].splice(index, 1);
-      // Check if the tasks array for that date is empty
       if (state.tasks[date].length === 0) {
-        delete state.tasks[date]; // Delete the date if no tasks are left
+        delete state.tasks[date]; 
       }
     }
   }
