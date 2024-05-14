@@ -17,14 +17,14 @@ const tasksSlice = createSlice({
     },
     editTask(state, action) {
       const { date, index, newTask } = action.payload;
-      if (state.tasks[date] && state.tasks[date][index]) {
-        state.tasks[date][index] = newTask;
-      }
+      state.tasks[date][index] = newTask;
     },
     deleteTask(state, action) {
       const { date, index } = action.payload;
-      if (state.tasks[date] && state.tasks[date][index]) {
-        state.tasks[date].splice(index, 1);
+      state.tasks[date].splice(index, 1);
+      // Check if the tasks array for that date is empty
+      if (state.tasks[date].length === 0) {
+        delete state.tasks[date]; // Delete the date if no tasks are left
       }
     }
   }
@@ -32,4 +32,5 @@ const tasksSlice = createSlice({
 
 export const { addTask, editTask, deleteTask } = tasksSlice.actions;
 export default tasksSlice.reducer;
+
 
