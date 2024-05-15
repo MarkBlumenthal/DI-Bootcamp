@@ -1,0 +1,7 @@
+/* src/components/Calendar.css */
+.react-datepicker__day--highlight {
+    background-color: red !important;
+    color: white !important;
+    border-radius: 50%;
+  }
+  

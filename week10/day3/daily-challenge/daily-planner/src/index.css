@@ -1,4 +1,17 @@
 /* src/index.css */
+
+.react-datepicker__day--highlight {
+  background-color: red !important;
+  color: white !important;
+  border-radius: 50%;
+}
+
+.highlight {
+  background-color: red !important;
+  color: white !important;
+  border-radius: 50%;
+}
+
 ul {
   list-style-type: none;
   padding: 0;

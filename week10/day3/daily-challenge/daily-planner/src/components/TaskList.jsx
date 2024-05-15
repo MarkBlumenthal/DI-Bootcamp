@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { createSelector } from 'reselect';
 import EditTask from './EditTask';
 import DeleteTask from './DeleteTask';
 
+// Memoized selector to get tasks for the selected date
+const selectTasksForDate = createSelector(
+  (state, selectedDate) => state.tasks[selectedDate],
+  tasks => tasks || []
+);
+
 const TaskList = ({ selectedDate }) => {
-  const tasks = useSelector(state => state.tasks[selectedDate] || []);
+  const tasks = useSelector(state => selectTasksForDate(state, selectedDate));
   const [editingTaskId, setEditingTaskId] = useState(null);
 
   return (
@@ -30,4 +37,6 @@ const TaskList = ({ selectedDate }) => {
 };
 
 export default TaskList;
+
+
 
