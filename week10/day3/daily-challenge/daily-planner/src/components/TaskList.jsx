@@ -4,7 +4,7 @@ import { createSelector } from 'reselect';
 import EditTask from './EditTask';
 import DeleteTask from './DeleteTask';
 
-// Memoized selector to get tasks for the selected date
+
 const selectTasksForDate = createSelector(
   (state, selectedDate) => state.tasks[selectedDate],
   tasks => tasks || []

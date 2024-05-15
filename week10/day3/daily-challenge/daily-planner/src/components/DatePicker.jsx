@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import '../index.css'; // Ensure the CSS is imported
+import '../index.css'; 
 
 const Calendar = ({ selectedDate, onDateChange }) => {
   const tasks = useSelector(state => state.tasks);
