@@ -1,0 +1,15 @@
+/* src/index.css */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+button {
+  margin-left: 8px;
+}
