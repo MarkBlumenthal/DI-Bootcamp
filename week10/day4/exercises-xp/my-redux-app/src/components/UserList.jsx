@@ -10,20 +10,33 @@ const UserList = () => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  return userState.loading ? (
-    <h2>Loading...</h2>
-  ) : userState.error ? (
-    <h2>{userState.error}</h2>
-  ) : (
-    <div>
-      <h2>User List</h2>
-      <div>
-        {userState.users.map(user => (
-          <p key={user.id}>{user.name}</p>
-        ))}
-      </div>
+  return (
+    <div className="container mt-5">
+      {userState.loading ? (
+        <div className="text-center">
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      ) : userState.error ? (
+        <div className="alert alert-danger" role="alert">
+          {userState.error}
+        </div>
+      ) : (
+        <div>
+          <h2 className="text-center mb-4">User List</h2>
+          <div className="list-group">
+            {userState.users.map(user => (
+              <div key={user.id} className="list-group-item">
+                {user.name}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default UserList;
+
