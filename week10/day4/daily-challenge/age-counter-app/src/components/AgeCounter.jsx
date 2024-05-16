@@ -6,25 +6,47 @@ import logo from '../react.svg';
 const AgeCounter = () => {
     const dispatch = useDispatch();
     const age = useSelector((state) => state.age.value);
-    const status = useSelector((state) => state.age.status);
+    const loading = useSelector((state) => state.age.loading);
     const error = useSelector((state) => state.age.error);
 
     return (
-        <div>
-            <h1>Age: {age}</h1>
-            <button onClick={() => dispatch(ageUpAsync(1))}>Increment</button>
-            <button onClick={() => dispatch(ageDownAsync(1))}>Decrement</button>
-            {status === 'loading' && (
-                <div>
-                    <img src={logo} className="App-logo" alt="loading" />
-                    <p>Loading...</p>
+        <div className="container mt-5">
+            <div className="card text-center">
+                <div className="card-header">
+                    <h1>Age Counter App</h1>
                 </div>
-            )}
-            {status === 'failed' && <p>Error: {error}</p>}
+                <div className="card-body">
+                    <h2 className="card-title">Age: {age}</h2>
+                    <button
+                        className="btn btn-primary mx-2"
+                        onClick={() => dispatch(ageUpAsync(1))}
+                        disabled={loading}
+                    >
+                        Increment
+                    </button>
+                    <button
+                        className="btn btn-danger mx-2"
+                        onClick={() => dispatch(ageDownAsync(1))}
+                        disabled={loading}
+                    >
+                        Decrement
+                    </button>
+                    {loading && (
+                        <div className="mt-3">
+                            <img src={logo} className="App-logo" alt="loading" style={{ height: '50px' }} />
+                            <p>Loading...</p>
+                        </div>
+                    )}
+                    {error && <p className="text-danger mt-3">Error: {error}</p>}
+                </div>
+            </div>
         </div>
     );
 };
 
 export default AgeCounter;
+
+
+
 
 

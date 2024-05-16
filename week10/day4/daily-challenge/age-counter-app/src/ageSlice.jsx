@@ -21,6 +21,7 @@ const ageSlice = createSlice({
     initialState: {
         value: 0,
         status: 'idle',
+        loading: false,
         error: null
     },
     reducers: {
@@ -38,25 +39,31 @@ const ageSlice = createSlice({
         builder
             .addCase(ageUpAsync.pending, (state) => {
                 state.status = 'loading';
+                state.loading = true;
             })
             .addCase(ageUpAsync.fulfilled, (state, action) => {
                 state.value += action.payload;
                 state.status = 'succeeded';
+                state.loading = false;
             })
             .addCase(ageUpAsync.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error.message;
+                state.loading = false;
             })
             .addCase(ageDownAsync.pending, (state) => {
                 state.status = 'loading';
+                state.loading = true;
             })
             .addCase(ageDownAsync.fulfilled, (state, action) => {
                 state.value -= action.payload;
                 state.status = 'succeeded';
+                state.loading = false;
             })
             .addCase(ageDownAsync.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error.message;
+                state.loading = false;
             });
     }
 });
@@ -64,5 +71,6 @@ const ageSlice = createSlice({
 export const { increment, decrement, incrementByAmount } = ageSlice.actions;
 
 export default ageSlice.reducer;
+
 
 
