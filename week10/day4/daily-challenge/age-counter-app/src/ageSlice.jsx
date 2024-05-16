@@ -1,9 +1,19 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const fetchAge = createAsyncThunk('age/fetchAge', async () => {
-    const response = await fetch('/data/age.json');
-    const data = await response.json();
-    return data.age;
+export const ageUpAsync = createAsyncThunk('age/ageUpAsync', async (amount, thunkAPI) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(amount);
+        }, 1000);
+    });
+});
+
+export const ageDownAsync = createAsyncThunk('age/ageDownAsync', async (amount, thunkAPI) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(amount);
+        }, 1000);
+    });
 });
 
 const ageSlice = createSlice({
@@ -26,14 +36,25 @@ const ageSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchAge.pending, (state) => {
+            .addCase(ageUpAsync.pending, (state) => {
                 state.status = 'loading';
             })
-            .addCase(fetchAge.fulfilled, (state, action) => {
-                state.value = action.payload;
+            .addCase(ageUpAsync.fulfilled, (state, action) => {
+                state.value += action.payload;
                 state.status = 'succeeded';
             })
-            .addCase(fetchAge.rejected, (state, action) => {
+            .addCase(ageUpAsync.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error.message;
+            })
+            .addCase(ageDownAsync.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(ageDownAsync.fulfilled, (state, action) => {
+                state.value -= action.payload;
+                state.status = 'succeeded';
+            })
+            .addCase(ageDownAsync.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error.message;
             });
@@ -43,4 +64,5 @@ const ageSlice = createSlice({
 export const { increment, decrement, incrementByAmount } = ageSlice.actions;
 
 export default ageSlice.reducer;
+
 
