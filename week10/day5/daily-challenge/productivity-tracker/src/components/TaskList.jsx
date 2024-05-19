@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectTasksByCategory } from '../store/selectors';
 import { addTask, editTask, deleteTask, updateTaskProgress } from '../store/tasksSlice';
+import './TaskList.css'; // Import the CSS file
 
 const TaskList = ({ categoryId }) => {
   const tasks = useSelector(state => selectTasksByCategory(state, categoryId));
@@ -49,7 +50,7 @@ const TaskList = ({ categoryId }) => {
       <button onClick={handleAddTask}>Add Task</button>
       <ul>
         {tasks.map(task => (
-          <li key={task.id}>
+          <li key={task.id} className={task.progress === 100 ? 'completed' : ''}>
             <input
               type="checkbox"
               checked={task.progress === 100}
@@ -67,14 +68,12 @@ const TaskList = ({ categoryId }) => {
                 <button onClick={() => setTaskIdBeingEdited(null)}>Cancel</button>
               </div>
             ) : (
-              <div>
-                {task.name}
-                <div>
-                  <button onClick={() => handleEdit(task.id, task.name)}>Edit</button>
-                  <button onClick={() => handleDelete(task.id)}>Delete</button>
-                </div>
-              </div>
+              <span>{task.name}</span>
             )}
+            <div>
+              <button onClick={() => handleEdit(task.id, task.name)}>Edit</button>
+              <button onClick={() => handleDelete(task.id)}>Delete</button>
+            </div>
           </li>
         ))}
       </ul>
@@ -83,6 +82,7 @@ const TaskList = ({ categoryId }) => {
 };
 
 export default TaskList;
+
 
 
 
