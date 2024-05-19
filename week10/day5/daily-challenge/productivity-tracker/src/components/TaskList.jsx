@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectTasksByCategory } from '../store/selectors';
 import { addTask, editTask, deleteTask, updateTaskProgress } from '../store/tasksSlice';
-import './TaskList.css'; // Import the CSS file
+import './TaskList.css'; 
 
 const TaskList = ({ categoryId }) => {
   const tasks = useSelector(state => selectTasksByCategory(state, categoryId));

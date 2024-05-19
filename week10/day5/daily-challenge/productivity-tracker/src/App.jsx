@@ -11,7 +11,6 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // Adding some initial categories for testing
     dispatch(addCategory({ id: '1', name: 'Work' }));
     dispatch(addCategory({ id: '2', name: 'Personal' }));
   }, [dispatch]);
@@ -27,6 +26,7 @@ const App = () => {
 };
 
 export default App;
+
 
 
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCategory, editCategory, deleteCategory } from '../store/categoriesSlice';
+import { deleteTasksByCategory } from '../store/tasksSlice';
 import { selectCategories } from '../store/selectors';
 
 const CategoryManager = () => {
@@ -31,11 +32,11 @@ const CategoryManager = () => {
 
   const handleDeleteCategory = (id) => {
     dispatch(deleteCategory(id));
+    dispatch(deleteTasksByCategory(id));
   };
 
   return (
     <div>
-      <h2>Manage Categories</h2>
       <input 
         type="text" 
         value={newCategoryName} 
@@ -74,6 +75,7 @@ const CategoryManager = () => {
 };
 
 export default CategoryManager;
+
 
 
 
