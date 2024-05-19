@@ -29,8 +29,8 @@ const TaskList = ({ categoryId }) => {
     setEditTaskName('');
   }, [editTaskName, categoryId, dispatch]);
 
-  const handleComplete = useCallback((id) => {
-    dispatch(updateTaskProgress({ id, progress: 100 }));
+  const handleComplete = useCallback((id, completed) => {
+    dispatch(updateTaskProgress({ id, progress: completed ? 100 : 0 }));
   }, [dispatch]);
 
   const handleDelete = useCallback((id) => {
@@ -50,6 +50,11 @@ const TaskList = ({ categoryId }) => {
       <ul>
         {tasks.map(task => (
           <li key={task.id}>
+            <input
+              type="checkbox"
+              checked={task.progress === 100}
+              onChange={e => handleComplete(task.id, e.target.checked)}
+            />
             {taskIdBeingEdited === task.id ? (
               <div>
                 <input 
@@ -66,7 +71,6 @@ const TaskList = ({ categoryId }) => {
                 {task.name}
                 <div>
                   <button onClick={() => handleEdit(task.id, task.name)}>Edit</button>
-                  <button onClick={() => handleComplete(task.id)}>Complete</button>
                   <button onClick={() => handleDelete(task.id)}>Delete</button>
                 </div>
               </div>
@@ -79,6 +83,8 @@ const TaskList = ({ categoryId }) => {
 };
 
 export default TaskList;
+
+
 
 
 
