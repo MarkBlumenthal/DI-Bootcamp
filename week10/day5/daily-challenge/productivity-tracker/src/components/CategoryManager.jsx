@@ -8,6 +8,7 @@ const CategoryManager = () => {
   const dispatch = useDispatch();
   const [newCategoryName, setNewCategoryName] = useState('');
   const [editCategoryName, setEditCategoryName] = useState('');
+  const [categoryIdBeingEdited, setCategoryIdBeingEdited] = useState(null);
 
   const handleAddCategory = () => {
     if (newCategoryName) {
@@ -17,8 +18,14 @@ const CategoryManager = () => {
     }
   };
 
-  const handleEditCategory = (id) => {
+  const handleEditCategory = (id, name) => {
+    setCategoryIdBeingEdited(id);
+    setEditCategoryName(name);
+  };
+
+  const handleSaveEdit = (id) => {
     dispatch(editCategory({ id, newCategory: { id, name: editCategoryName } }));
+    setCategoryIdBeingEdited(null);
     setEditCategoryName('');
   };
 
@@ -39,15 +46,26 @@ const CategoryManager = () => {
       <ul>
         {categories.map(category => (
           <li key={category.id}>
-            {category.name}
-            <input 
-              type="text" 
-              value={editCategoryName} 
-              onChange={e => setEditCategoryName(e.target.value)} 
-              placeholder="Edit category name" 
-            />
-            <button onClick={() => handleEditCategory(category.id)}>Edit</button>
-            <button onClick={() => handleDeleteCategory(category.id)}>Delete</button>
+            {categoryIdBeingEdited === category.id ? (
+              <div>
+                <input 
+                  type="text" 
+                  value={editCategoryName} 
+                  onChange={e => setEditCategoryName(e.target.value)} 
+                  placeholder="Edit category name" 
+                />
+                <button onClick={() => handleSaveEdit(category.id)}>Save</button>
+                <button onClick={() => setCategoryIdBeingEdited(null)}>Cancel</button>
+              </div>
+            ) : (
+              <div>
+                {category.name}
+                <div>
+                  <button onClick={() => handleEditCategory(category.id, category.name)}>Edit</button>
+                  <button onClick={() => handleDeleteCategory(category.id)}>Delete</button>
+                </div>
+              </div>
+            )}
           </li>
         ))}
       </ul>
@@ -56,3 +74,7 @@ const CategoryManager = () => {
 };
 
 export default CategoryManager;
+
+
+
+

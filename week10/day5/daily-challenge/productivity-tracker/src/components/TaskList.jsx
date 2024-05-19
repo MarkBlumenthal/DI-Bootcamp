@@ -7,6 +7,8 @@ const TaskList = ({ categoryId }) => {
   const tasks = useSelector(state => selectTasksByCategory(state, categoryId));
   const dispatch = useDispatch();
   const [newTaskName, setNewTaskName] = useState('');
+  const [editTaskName, setEditTaskName] = useState('');
+  const [taskIdBeingEdited, setTaskIdBeingEdited] = useState(null);
 
   const handleAddTask = useCallback(() => {
     if (newTaskName) {
@@ -16,9 +18,16 @@ const TaskList = ({ categoryId }) => {
     }
   }, [newTaskName, categoryId, dispatch]);
 
-  const handleEdit = useCallback((id, newTaskName) => {
-    dispatch(editTask({ id, newTask: { id, name: newTaskName, categoryId, progress: 0 } }));
-  }, [categoryId, dispatch]);
+  const handleEdit = useCallback((id, name) => {
+    setTaskIdBeingEdited(id);
+    setEditTaskName(name);
+  }, []);
+
+  const handleSaveEdit = useCallback((id) => {
+    dispatch(editTask({ id, newTask: { id, name: editTaskName, categoryId, progress: 0 } }));
+    setTaskIdBeingEdited(null);
+    setEditTaskName('');
+  }, [editTaskName, categoryId, dispatch]);
 
   const handleComplete = useCallback((id) => {
     dispatch(updateTaskProgress({ id, progress: 100 }));
@@ -41,12 +50,27 @@ const TaskList = ({ categoryId }) => {
       <ul>
         {tasks.map(task => (
           <li key={task.id}>
-            {task.name}
-            <div>
-              <button onClick={() => handleEdit(task.id, 'Edited Task Name')}>Edit</button>
-              <button onClick={() => handleComplete(task.id)}>Complete</button>
-              <button onClick={() => handleDelete(task.id)}>Delete</button>
-            </div>
+            {taskIdBeingEdited === task.id ? (
+              <div>
+                <input 
+                  type="text" 
+                  value={editTaskName} 
+                  onChange={e => setEditTaskName(e.target.value)} 
+                  placeholder="Edit task name" 
+                />
+                <button onClick={() => handleSaveEdit(task.id)}>Save</button>
+                <button onClick={() => setTaskIdBeingEdited(null)}>Cancel</button>
+              </div>
+            ) : (
+              <div>
+                {task.name}
+                <div>
+                  <button onClick={() => handleEdit(task.id, task.name)}>Edit</button>
+                  <button onClick={() => handleComplete(task.id)}>Complete</button>
+                  <button onClick={() => handleDelete(task.id)}>Delete</button>
+                </div>
+              </div>
+            )}
           </li>
         ))}
       </ul>
@@ -55,6 +79,9 @@ const TaskList = ({ categoryId }) => {
 };
 
 export default TaskList;
+
+
+
 
 
 

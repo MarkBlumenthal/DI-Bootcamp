@@ -19,14 +19,18 @@ const App = () => {
   return (
     <div className="container">
       <h1>Productivity Tracker</h1>
+      <CategoryManager />
       <CategorySelector selectedCategoryId={selectedCategoryId} setSelectedCategoryId={setSelectedCategoryId} />
       {selectedCategoryId && <TaskList categoryId={selectedCategoryId} />}
-      <CategoryManager />
     </div>
   );
 };
 
 export default App;
+
+
+
+
 
 
 
