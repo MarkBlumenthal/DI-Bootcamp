@@ -1,44 +1,238 @@
-.container-fluid {
-    background-color: white;
-    font-family: fantasy;
-    font-size: larger; 
+/* General styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
-a:link {
-    color: black;
-    text-decoration: none;
-    transition: font-size 0.7s;
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
 }
 
-a:visited {
-    color: black; 
-  }
-  
-
-a:hover {
-   font-size: xx-large;
+/* Navbar styles */
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
 }
 
-.home {
-    padding-left: 50px;
+.navbar .navbar-brand img {
+    height: 50px;
 }
 
-.about-me {
-    padding-right: 50px;
+.navbar .nav-link {
+    color: #333;
+    font-weight: bold;
+    margin-left: 20px;
 }
 
-
-.pics-1 {
-    margin-top: 350px;
-    margin-left: 100px;
+.navbar .nav-link:hover {
+    color: #007bff;
 }
 
-@media (max-width: 768px) {
-    .pics-1 {
-        padding: 10px;
-        display: inline;
+/* Hero section styles */
+.hero-area {
+    background: #f8f9fa;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-area .content-block {
+    margin: 20px 0;
+}
+
+.hero-area h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-area p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-area .btn-main {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
+.hero-area .btn-text {
+    background: transparent;
+    color: #007bff;
+    padding: 10px 20px;
+}
+
+/* About section styles */
+.about-section {
+    padding: 60px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.about-section .personal-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.about-section .personal-info p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Portfolio section styles */
+.portfolio-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.portfolio-section .section-title {
+    margin-bottom: 40px;
+}
+
+.portfolio-section .grid-item {
+    margin-bottom: 30px;
+}
+
+.portfolio-section .box {
+    position: relative;
+}
+
+.portfolio-section .box img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.portfolio-section .box-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    visibility: hidden;
+}
+
+.portfolio-section .box:hover .box-content {
+    visibility: visible;
+}
+
+/* Contact section styles */
+.contact-section {
+    padding: 60px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.contact-section .form-control {
+    margin-bottom: 20px;
+}
+
+.contact-section .btn-main {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+/* Footer styles */
+.site-footer {
+    background: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.site-footer .footer-brand img {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.site-footer .footer-social .list-inline-item {
+    margin: 0 10px;
+}
+
+.site-footer .footer-social .list-inline-item a {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.site-footer .footer-bottom {
+    margin-top: 20px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.back-to-top a {
+    color: #007bff;
+    font-size: 2rem;
+}
+
+.preloader {
+    display: none; /* Hide preloader initially */
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 9999;
+}
+
+.preloader .dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.preloader .dot {
+    width: 15px;
+    height: 15px;
+    background-color: #007bff;
+    border-radius: 50%;
+    margin: 0 5px;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
     }
 }
+
+/* Carousel section styles */
+.carousel-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.carousel-item img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+  
 
 
 
