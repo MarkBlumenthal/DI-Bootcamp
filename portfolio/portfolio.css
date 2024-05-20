@@ -27,7 +27,8 @@ h1, h2, h3, h4 {
     margin-left: 20px;
 }
 
-.navbar .nav-link:hover {
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
     color: #007bff;
 }
 
@@ -226,38 +227,62 @@ h1, h2, h3, h4 {
     padding: 60px 0;
     text-align: center;
     overflow: hidden;
-}
-
-.carousel-wrapper {
+  }
+  
+  .carousel-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     width: 100%;
-}
-
-.carousel {
+  }
+  
+  .carousel {
     display: flex;
     align-items: center;
     justify-content: center;
     animation: scroll 30s linear infinite;
-}
-
-.carousel img {
-    max-width: 100px;
+  }
+  
+  .icon-wrapper {
     margin: 0 20px;
-}
-
-/* Animation for the carousel */
-@keyframes scroll {
+    text-align: center; /* Center-align text under icons */
+  }
+  
+  .carousel i, .carousel img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .icon-wrapper p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* Animation for the carousel */
+  @keyframes scroll {
     0% {
-        transform: translateX(0);
+      transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+      transform: translateX(-50%);
     }
+  }
+
+  /* Adjust the logo size and alignment */
+.navbar-brand img {
+    height: 60px; /* Adjust the height as needed */
+    width: auto;  /* Maintain aspect ratio */
+    margin-right: 20px; /* Add space between logos if necessary */
 }
 
+
+
+  
+  
+  
 
   
 

@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-    
+
     // Typing effect for hero section
     const typer = document.querySelector('.typer');
     if (typer) {
@@ -66,13 +66,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
         type();
     }
- // Initialize Bootstrap carousel
- const techCarousel = document.querySelector('#techCarousel');
- if (techCarousel) {
-     const carousel = new bootstrap.Carousel(techCarousel, {
-         interval: 3000, // Change slide every 3 seconds
-         ride: 'carousel'
-     });
- }
+
+    // Initialize Bootstrap carousel
+    const techCarousel = document.querySelector('#techCarousel');
+    if (techCarousel) {
+        const carousel = new bootstrap.Carousel(techCarousel, {
+            interval: 1000, // Change slide every 3 seconds
+            ride: 'carousel'
+        });
+    }
 });
+
+
 
