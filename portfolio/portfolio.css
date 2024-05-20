@@ -225,12 +225,39 @@ h1, h2, h3, h4 {
     background: #f8f9fa;
     padding: 60px 0;
     text-align: center;
+    overflow: hidden;
 }
 
-.carousel-item img {
-    max-width: 100px;
-    max-height: 100px;
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
 }
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scroll 30s linear infinite;
+}
+
+.carousel img {
+    max-width: 100px;
+    margin: 0 20px;
+}
+
+/* Animation for the carousel */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 
   
 
