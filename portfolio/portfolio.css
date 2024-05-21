@@ -41,6 +41,11 @@ h1, h2, h3, h4 {
     padding-left: 180px;
 }
 
+.light-blue {
+    color: #007bff; /* Light blue color */
+}
+
+
 .hero-content {
     display: flex;
     align-items: center;
@@ -52,7 +57,7 @@ h1, h2, h3, h4 {
 }
 
 .fa-plus {
-    color: #5a7ffb;
+    color: #007bff;
 }
 
 .hero-area h1 {
