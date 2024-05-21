@@ -49,6 +49,10 @@ h1, h2, h3, h4 {
     margin: 20px 0;
 }
 
+.fa-plus {
+    color: blue;
+}
+
 .hero-area h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -135,8 +139,8 @@ h1, h2, h3, h4 {
 }
 
 .about-section h2 {
-    font-size: 2.5rem;
     margin-bottom: 20px;
+    padding-top: 50px;
 }
 
 .about-section p {
@@ -183,6 +187,10 @@ margin-left: 180px;
     text-align: center;
 }
 
+.portfolio-section h2 {
+    padding-top: 50px;
+}
+
 .portfolio-section .section-title {
     margin-bottom: 40px;
 }
@@ -219,6 +227,10 @@ margin-left: 180px;
     padding: 60px 0;
     background: #fff;
     text-align: center;
+}
+
+.contact-section h2 {
+    padding-top: 50px;
 }
 
 .contact-section .form-control {
