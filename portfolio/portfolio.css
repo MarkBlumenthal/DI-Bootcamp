@@ -12,17 +12,19 @@ h1, h2, h3, h4 {
 
 /* Navbar styles */
 .navbar {
-    background-color: #fff;
-    border-bottom: 1px solid #e0e0e0;
+    background-color: #0d0f27;
+    border-bottom: 1px solid #0d0f27;
     padding: 10px 0;
 }
 
 .navbar .navbar-brand img {
     height: 50px;
+    border: 5px solid #fff; /* Adds a white solid border */
+    border-radius: 5px; /* Optional: Adds rounded corners */
 }
 
 .navbar .nav-link {
-    color: #333;
+    color: #fff;
     font-weight: bold;
     margin-left: 20px;
 }
@@ -34,7 +36,7 @@ h1, h2, h3, h4 {
 
 /* Hero section styles */
 .hero-area {
-    background: #f8f9fa;
+    background: #0d0f27;
     padding: 100px 0;
     padding-left: 235px;
 }
@@ -50,17 +52,19 @@ h1, h2, h3, h4 {
 }
 
 .fa-plus {
-    color: blue;
+    color: #007bff;
 }
 
 .hero-area h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 .hero-area p {
     font-size: 1.2rem;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 .hero-area .btn-main {
@@ -124,14 +128,14 @@ h1, h2, h3, h4 {
 .fun-facts li {
     margin-bottom: 20px;
     text-align: center;
+    color: #fff;
 }
 
 .fun-facts li h3 {
     margin-top: 10px;
     font-size: 1rem;
+    color: #fff;
 }
-
-
 
 
 /* About section styles */
@@ -186,12 +190,13 @@ margin-left: 180px;
 /* Portfolio section styles */
 .portfolio-section {
     padding: 60px 0;
-    background: #f8f9fa;
+    background: #0d0f27;
     text-align: center;
 }
 
 .portfolio-section h2 {
     padding-top: 50px;
+    color: #fff;
 }
 
 .portfolio-section .section-title {
@@ -263,7 +268,7 @@ margin-left: 180px;
 
 /* Footer styles */
 .site-footer {
-    background: #333;
+    background: #0d0f27;
     color: #fff;
     padding: 40px 0;
     text-align: center;
@@ -272,6 +277,8 @@ margin-left: 180px;
 .site-footer .footer-brand img {
     height: 50px;
     margin-bottom: 20px;
+    border: 5px solid #fff; /* Adds a white solid border */
+    border-radius: 5px; /* Optional: Adds rounded corners */
 }
 
 .site-footer .footer-social .list-inline-item {
@@ -349,7 +356,7 @@ margin-left: 180px;
 
 /* Carousel section styles */
 .carousel-section {
-    background: #f8f9fa;
+    background: #fff;
     padding: 60px 0;
     text-align: center;
     overflow: hidden;
