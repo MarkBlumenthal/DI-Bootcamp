@@ -38,7 +38,7 @@ h1, h2, h3, h4 {
 .hero-area {
     background: #0d0f27;
     padding: 100px 0;
-    padding-left: 235px;
+    padding-left: 180px;
 }
 
 .hero-content {
@@ -128,14 +128,25 @@ h1, h2, h3, h4 {
 .fun-facts li {
     margin-bottom: 20px;
     text-align: center;
-    color: #fff;
+    color: #070707;
+    padding: 20px; /* Add padding inside each item */
+    background-color: #fff; /* Background color for the bubble */
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for a 3D effect */
+    display: flex;
+    align-items: center;
+}
+
+.fun-facts li span {
+    margin-right: 10px; /* Space between the icon and text */
 }
 
 .fun-facts li h3 {
-    margin-top: 10px;
+    margin: 0; /* Remove default margin */
     font-size: 1rem;
-    color: #fff;
+    color: #070707;
 }
+
 
 
 /* About section styles */
@@ -312,7 +323,7 @@ margin-left: 180px;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    background: #0d0f27; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -327,7 +338,7 @@ margin-left: 180px;
 .preloader .dot {
     width: 15px;
     height: 15px;
-    background-color: #007bff;
+    background-color: #fff;
     border-radius: 50%;
     animation: moveUpDown 1.2s infinite;
 }
