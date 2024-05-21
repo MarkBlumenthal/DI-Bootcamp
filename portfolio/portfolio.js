@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Preloader
     const preloader = document.querySelector('.preloader');
-    window.addEventListener('load', () => {
+
+    // Hide the preloader after 3 seconds (3000 milliseconds)
+    setTimeout(() => {
         preloader.style.display = 'none';
-    });
+    }, 2000);
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -76,6 +78,9 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+
+
 
 
 
