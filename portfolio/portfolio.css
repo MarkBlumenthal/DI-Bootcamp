@@ -64,12 +64,14 @@ h1, h2, h3, h4 {
     color: #fff;
     padding: 10px 20px;
     margin-right: 10px;
+    border-radius: 5px;
 }
 
 .hero-area .btn-text {
     background: #007bff;
     color: #fff;
     padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .hero-area .btn-download {
@@ -80,6 +82,7 @@ h1, h2, h3, h4 {
     display: inline-block;
     text-decoration: none;
     margin-left: 50px;
+    border-radius: 5px;
 }
 
 .hero-area .btn-download:hover {
