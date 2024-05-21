@@ -231,6 +231,17 @@ margin-left: 180px;
     padding: 10px 20px;
 }
 
+.image-wrapper {
+    text-align: center;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
 /* Footer styles */
 .site-footer {
     background: #333;
