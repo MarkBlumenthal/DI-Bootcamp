@@ -36,7 +36,7 @@ h1, h2, h3, h4 {
 .hero-area {
     background: #f8f9fa;
     padding: 100px 0;
-    padding-left: 180px;
+    padding-left: 235px;
 }
 
 .hero-content {
@@ -239,6 +239,10 @@ margin-left: 180px;
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+.form-block {
+    margin-top: 100px; /* Adjust the value as needed */
 }
 
 
