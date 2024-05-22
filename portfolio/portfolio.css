@@ -34,6 +34,34 @@ h1, h2, h3, h4 {
     color: #007bff;
 }
 
+/* Media Queries for Small Screens */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: white; /* Background color for the dropdown menu */
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        color: black !important; /* Text color for the links */
+    }
+
+    .navbar-nav .nav-item .nav-link:hover,
+    .navbar-nav .nav-item .nav-link.active {
+        color: #007bff !important; /* Text color for the active link and on hover */
+    }
+
+    .navbar-toggler {
+        border-color: white; /* Optional: Change border color of the toggle button */
+    }
+
+    .navbar-toggler-icon {
+        color: white; /* Color of the icon */
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+}
+
 /* Hero section styles */
 .hero-area {
     background: #0d0f27;
