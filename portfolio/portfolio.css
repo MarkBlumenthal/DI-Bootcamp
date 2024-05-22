@@ -302,6 +302,50 @@ h1, h2, h3, h4 {
     color: #070707;
 }
 
+.image-wrapper {
+    position: relative;
+    display: inline-block; /* Adjust based on your layout needs */
+}
+
+.spinning-frame {
+    position: absolute;
+    top: -10px; /* Adjust these values to position the frame correctly around the image */
+    left: -10px; /* Adjust these values to position the frame correctly around the image */
+    width: calc(100% + 20px); /* Adjust the size to be slightly larger than the image */
+    height: calc(100% + 20px); /* Adjust the size to be slightly larger than the image */
+    border: 5px solid #0d0f27; /* Black frame */
+    box-sizing: border-box;
+    animation: spin-scale 8s linear infinite; /* Spinning and scaling animation */
+    pointer-events: none; /* Ensure the frame doesn't interfere with image interaction */
+}
+
+.image-wrapper img {
+    display: block; /* Remove any additional margin */
+    width: 100%; /* Ensure the image size is responsive */
+    height: auto; /* Maintain aspect ratio */
+    position: relative; /* Ensure it stays in place */
+    z-index: 1; /* Ensure the image is above the spinning frame */
+}
+
+@keyframes spin-scale {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(90deg) scale(0.6);
+    }
+    50% {
+        transform: rotate(180deg) scale(1);
+    }
+    75% {
+        transform: rotate(270deg) scale(0.6);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+
 /* Footer styles */
 .site-footer {
     background: #0d0f27;
