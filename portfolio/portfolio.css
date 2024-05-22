@@ -152,13 +152,14 @@ h1, h2, h3, h4 {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 250px;
-    height: 450px;
-    background-color: transparent;
-    border: 8px solid white;
+    width: 260px;
+    height: 510px;
+    background-color: #007bff;
+    
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
+    margin-left: 20px;
 }
 
 .image-wrapper img {
@@ -199,6 +200,39 @@ h1, h2, h3, h4 {
     font-size: 1rem;
     color: #070707;
 }
+
+/* Keyframe animations */
+@keyframes moveLeftRight {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-80px);
+    }
+}
+
+@keyframes moveRightLeft {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(80px);
+    }
+}
+
+/* Apply animations to specific elements */
+.fun-facts li:nth-child(1) {
+    animation: moveLeftRight 3s infinite;
+}
+
+.fun-facts li:nth-child(2) {
+    animation: moveRightLeft 3s infinite;
+}
+
+.fun-facts li:nth-child(3) {
+    animation: moveLeftRight 3s infinite; /* Apply the same animation as the first item */
+}
+
 
 /* About section styles */
 .about-section {
@@ -374,6 +408,37 @@ h1, h2, h3, h4 {
     }
 }
 
+/* New class for reverse spinning frame */
+/* .spinning-frame-reverse {
+    position: absolute;
+    top: -10px; 
+    left: -10px; 
+    width: calc(100% + 20px); 
+    height: calc(100% + 20px); 
+    border: 5px solid #0d0f27; 
+    box-sizing: border-box;
+    animation: spin-scale-reverse 8s linear infinite; 
+    pointer-events: none; 
+} */
+
+/* Keyframes for the reverse spin */
+/* @keyframes spin-scale-reverse {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(-90deg) scale(0.6);
+    }
+    50% {
+        transform: rotate(-180deg) scale(1);
+    }
+    75% {
+        transform: rotate(-270deg) scale(0.6);
+    }
+    100% {
+        transform: rotate(-360deg) scale(1);
+    }
+} */
 
 /* Footer styles */
 .site-footer {
