@@ -285,6 +285,7 @@ h1, h2, h3, h4 {
     background: #007bff;
     color: #fff;
     padding: 10px 20px;
+    font-weight: bold;
 }
 
 .image-wrapper {
