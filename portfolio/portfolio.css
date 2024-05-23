@@ -34,6 +34,18 @@ h1, h2, h3, h4 {
     color: #007bff;
 }
 
+/* Custom logo styles */
+.logo-list .list-inline-item a {
+    color: #fff; /* Change icon color to white */
+    font-size: 1.5rem; /* Increase the size of the icons */
+    margin-right: 10px;
+}
+
+.logo-list .list-inline-item a:hover {
+    color: #007bff; /* Optional: Change color on hover */
+}
+
+
 /* Media Queries for Small Screens */
 @media (max-width: 768px) {
     .navbar-collapse {
@@ -461,7 +473,7 @@ h1, h2, h3, h4 {
 
 .site-footer .footer-social .list-inline-item a {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 .site-footer .footer-bottom {
@@ -642,6 +654,42 @@ h1, h2, h3, h4 {
 
 
 
+/* Slide-in Animations */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-from-left {
+    animation: slideInFromLeft 3.5s forwards;
+}
+
+.slide-in-from-right {
+    animation: slideInFromRight 3.5s forwards;
+}
+
+/* Ensure sections are initially visible */
+section {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
 
 
 

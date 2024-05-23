@@ -77,7 +77,33 @@ document.addEventListener("DOMContentLoaded", function() {
             ride: 'carousel'
         });
     }
+
+    // Intersection Observer for section animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('slide-in-from-left');
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const aboutSection = document.querySelector('#about-section');
+    const portfolioSection = document.querySelector('#portfolio-section');
+    const contactSection = document.querySelector('#contact-section');
+
+    [aboutSection, portfolioSection, contactSection].forEach(section => {
+        observer.observe(section);
+    });
 });
+
 
 
 
