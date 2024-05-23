@@ -76,7 +76,7 @@ h1, h2, h3, h4 {
 
 /* Hero section styles */
 .hero-area {
-    background: #0d0f27;
+    background:#0d0f27;
     padding: 100px 0;
     padding-left: 180px;
 }
@@ -159,7 +159,7 @@ h1, h2, h3, h4 {
     display: inline-block;
 }
 
-.image-wrapper::before {
+/* .image-wrapper::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -172,7 +172,7 @@ h1, h2, h3, h4 {
     transform: translate(-50%, -50%);
     z-index: 0;
     margin-left: 20px;
-}
+} */
 
 .image-wrapper img {
     position: relative;
