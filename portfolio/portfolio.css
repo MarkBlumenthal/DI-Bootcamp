@@ -75,30 +75,44 @@ h1, h2, h3, h4 {
         font-size: 0.9rem;
         margin-left: 10px;
     }
-    
+
     .hero-area {
         padding: 50px 20px;
         text-align: center;
+        padding-right: 200px;
     }
-    
+
     .hero-content,
     .image-block {
         flex-direction: column;
     }
-    
+
     .about-img-1 {
         margin-left: 0;
     }
-    
+
     .about-img-2 {
         position: relative;
         top: 10px;
         left: 0;
     }
-    
+
     .portfolio-section .grid-item,
     .contact-section .form-control {
         width: 100%;
+    }
+
+    .hero-area .btn-main,
+    .hero-area .btn-download,
+    .hero-area .btn-text {
+        display: block;
+        margin: 10px auto;
+        width: fit-content;
+    }
+
+    .image-wrapper img {
+        max-width: 90%;
+        margin: 0 auto;
     }
 }
 
@@ -361,7 +375,7 @@ h1, h2, h3, h4 {
     background-color: #fff;
     color: #007bff;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
     margin-bottom: 10px;
@@ -394,6 +408,10 @@ h1, h2, h3, h4 {
 .contact-section h2 {
     padding-top: 50px;
     color: #070707;
+}
+
+.form-block {
+    margin-top: 90px; /* Adjust the value as needed */
 }
 
 .contact-section .form-control {
@@ -672,6 +690,7 @@ section {
     opacity: 1;
     transition: opacity 0.5s;
 }
+
 
 
 
