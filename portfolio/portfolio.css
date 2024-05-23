@@ -18,7 +18,9 @@ h1, h2, h3, h4 {
 }
 
 .navbar .navbar-brand img {
-    height: 50px;
+    height: 60px;
+    width: auto;
+    margin-right: 20px;
     border: 5px solid #fff;
     border-radius: 5px;
 }
@@ -36,41 +38,67 @@ h1, h2, h3, h4 {
 
 /* Custom logo styles */
 .logo-list .list-inline-item a {
-    color: #fff; /* Change icon color to white */
-    font-size: 1.5rem; /* Increase the size of the icons */
+    color: #fff;
+    font-size: 1.5rem;
     margin-right: 10px;
 }
 
 .logo-list .list-inline-item a:hover {
-    color: #007bff; /* Optional: Change color on hover */
+    color: #007bff;
 }
-
 
 /* Media Queries for Small Screens */
 @media (max-width: 768px) {
     .navbar-collapse {
-        background-color: white; /* Background color for the dropdown menu */
+        background-color: white;
     }
 
     .navbar-nav .nav-item .nav-link {
-        color: black !important; /* Text color for the links */
+        color: black !important;
     }
 
     .navbar-nav .nav-item .nav-link:hover,
     .navbar-nav .nav-item .nav-link.active {
-        color: #007bff !important; /* Text color for the active link and on hover */
+        color: #007bff !important;
     }
 
     .navbar-toggler {
-        border-color: white; /* Optional: Change border color of the toggle button */
+        border-color: white;
     }
 
     .navbar-toggler-icon {
-        color: white; /* Color of the icon */
-    }
-
-    .navbar-toggler-icon {
+        color: white;
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .navbar .nav-link {
+        font-size: 0.9rem;
+        margin-left: 10px;
+    }
+    
+    .hero-area {
+        padding: 50px 20px;
+        text-align: center;
+    }
+    
+    .hero-content,
+    .image-block {
+        flex-direction: column;
+    }
+    
+    .about-img-1 {
+        margin-left: 0;
+    }
+    
+    .about-img-2 {
+        position: relative;
+        top: 10px;
+        left: 0;
+    }
+    
+    .portfolio-section .grid-item,
+    .contact-section .form-control {
+        width: 100%;
     }
 }
 
@@ -82,9 +110,8 @@ h1, h2, h3, h4 {
 }
 
 .light-blue {
-    color: #007bff; /* Light blue color */
+    color: #007bff;
 }
-
 
 .hero-content {
     display: flex;
@@ -112,16 +139,7 @@ h1, h2, h3, h4 {
     color: #fff;
 }
 
-.hero-area .btn-main {
-    background: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    margin-right: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
+.hero-area .btn-main,
 .hero-area .btn-text {
     background: #007bff;
     color: #fff;
@@ -129,6 +147,10 @@ h1, h2, h3, h4 {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+}
+
+.hero-area .btn-main {
+    margin-right: 10px;
 }
 
 .hero-area .btn-download {
@@ -158,21 +180,6 @@ h1, h2, h3, h4 {
     position: relative;
     display: inline-block;
 }
-
-/* .image-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 260px;
-    height: 510px;
-    background-color: #007bff;
-    
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    margin-left: 20px;
-} */
 
 .image-wrapper img {
     position: relative;
@@ -232,7 +239,6 @@ h1, h2, h3, h4 {
     }
 }
 
-/* Apply animations to specific elements */
 .fun-facts li:nth-child(1) {
     animation: moveLeftRight 3s infinite;
 }
@@ -242,9 +248,8 @@ h1, h2, h3, h4 {
 }
 
 .fun-facts li:nth-child(3) {
-    animation: moveLeftRight 3s infinite; /* Apply the same animation as the first item */
+    animation: moveLeftRight 3s infinite;
 }
-
 
 /* About section styles */
 .about-section {
@@ -318,25 +323,65 @@ h1, h2, h3, h4 {
 
 .portfolio-section .box {
     position: relative;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .portfolio-section .box img {
     width: 100%;
+    height: 350px;
+    object-fit: cover;
     border-radius: 5px;
+    transition: transform 0.5s ease;
 }
 
-.portfolio-section .box-content {
+.portfolio-section .overlay {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    text-align: center;
-    visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(-100%);
 }
 
-.portfolio-section .box:hover .box-content {
-    visibility: visible;
+.portfolio-section .overlay-content {
+    text-align: center;
+    color: #fff;
+    transform: translateY(100%);
+}
+
+.portfolio-section .btn {
+    background-color: #fff;
+    color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.portfolio-section .description {
+    margin: 0;
+}
+
+.portfolio-section .box:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-section .box:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-section .box:hover .overlay-content {
+    transform: translateY(0);
 }
 
 /* Contact section styles */
@@ -362,44 +407,32 @@ h1, h2, h3, h4 {
     font-weight: bold;
 }
 
+/* Image wrapper and spinning frame styles */
 .image-wrapper {
     text-align: center;
+    position: relative;
+    display: inline-block;
 }
 
 .image-wrapper img {
-    max-width: 100%;
+    display: block;
+    width: 100%;
     height: auto;
     border-radius: 10px;
-}
-
-.form-block {
-    margin-top: 100px;
-    color: #070707;
-}
-
-.image-wrapper {
     position: relative;
-    display: inline-block; /* Adjust based on your layout needs */
+    z-index: 1;
 }
 
 .spinning-frame {
     position: absolute;
-    top: -10px; /* Adjust these values to position the frame correctly around the image */
-    left: -10px; /* Adjust these values to position the frame correctly around the image */
-    width: calc(100% + 20px); /* Adjust the size to be slightly larger than the image */
-    height: calc(100% + 20px); /* Adjust the size to be slightly larger than the image */
-    border: 5px solid #0d0f27; /* Black frame */
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    border: 5px solid #0d0f27;
     box-sizing: border-box;
-    animation: spin-scale 8s linear infinite; /* Spinning and scaling animation */
-    pointer-events: none; /* Ensure the frame doesn't interfere with image interaction */
-}
-
-.image-wrapper img {
-    display: block; /* Remove any additional margin */
-    width: 100%; /* Ensure the image size is responsive */
-    height: auto; /* Maintain aspect ratio */
-    position: relative; /* Ensure it stays in place */
-    z-index: 1; /* Ensure the image is above the spinning frame */
+    animation: spin-scale 8s linear infinite;
+    pointer-events: none;
 }
 
 @keyframes spin-scale {
@@ -540,7 +573,6 @@ h1, h2, h3, h4 {
 }
 
 /* Carousel section styles */
-
 .carousel-section {
     background: #fff;
     padding: 60px 0;
@@ -586,7 +618,6 @@ h1, h2, h3, h4 {
     }
 }
 
-/* Optional: Ensure that duplicated items don't show at the start and end */
 .carousel::before, .carousel::after {
     content: '';
     position: absolute;
@@ -604,55 +635,6 @@ h1, h2, h3, h4 {
 .carousel::after {
     right: -100%;
 }
-
-
-/* Adjust the logo size and alignment */
-.navbar-brand img {
-    height: 60px;
-    width: auto;
-    margin-right: 20px;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .navbar .nav-link {
-        font-size: 0.9rem;
-        margin-left: 10px;
-    }
-    
-    .hero-area {
-        padding: 50px 20px;
-        text-align: center;
-    }
-    
-    .hero-content {
-        flex-direction: column;
-    }
-    
-    .image-block {
-        flex-direction: column;
-    }
-    
-    .about-img-1 {
-        margin-left: 0;
-    }
-    
-    .about-img-2 {
-        position: relative;
-        top: 10px;
-        left: 0;
-    }
-    
-    .portfolio-section .grid-item {
-        width: 100%;
-    }
-    
-    .contact-section .form-control {
-        width: 100%;
-    }
-}
-
-
 
 /* Slide-in Animations */
 @keyframes slideInFromLeft {
@@ -690,6 +672,7 @@ section {
     opacity: 1;
     transition: opacity 0.5s;
 }
+
 
 
 
