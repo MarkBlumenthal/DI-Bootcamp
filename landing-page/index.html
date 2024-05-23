@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board Landing Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Intense Job Board</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Find a Job</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Post a Job</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4">Build Your Future</h1>
+            <p class="lead">We offer 2,089 job vacancies right now!</p>
+            <form class="form-inline justify-content-center">
+                <input class="form-control mr-sm-2" type="search" placeholder="Job title, skills, or company" aria-label="Search">
+                <input class="form-control mr-sm-2" type="search" placeholder="City or state" aria-label="Search">
+                <button class="btn btn-green my-2 my-sm-0" type="submit">Find Job</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section bg-success text-white text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col"><a href="#" class="text-white">Healthcare</a></div>
+                <div class="col"><a href="#" class="text-white">Automobile Jobs</a></div>
+                <div class="col"><a href="#" class="text-white">Construction</a></div>
+                <div class="col"><a href="#" class="text-white">Food Service</a></div>
+                <div class="col"><a href="#" class="text-white">Logistics</a></div>
+                <div class="col"><a href="#" class="text-white">Finance</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Jobs Section -->
+    <section class="latest-jobs-section py-5">
+        <div class="container">
+            <h2 class="text-center">Latest Jobs</h2>
+            <table class="table table-hover mt-4">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Company</th>
+                        <th scope="col">Job Vacancy</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Employment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>11.05.2016, 4:15pm</td>
+                        <td>Company A</td>
+                        <td>Developer</td>
+                        <td>New York</td>
+                        <td>$6000</td>
+                        <td>Full time</td>
+                    </tr>
+                    <tr>
+                        <td>10.05.2016, 2:24pm</td>
+                        <td>Company B</td>
+                        <td>Project Manager</td>
+                        <td>San Diego</td>
+                        <td>$4000</td>
+                        <td>Full time</td>
+                    </tr>
+                    <tr>
+                        <td>10.05.2016, 2:24pm</td>
+                        <td>Company C</td>
+                        <td>Truck Driver</td>
+                        <td>Chicago</td>
+                        <td>$3000</td>
+                        <td>Part time</td>
+                    </tr>
+                    <tr>
+                        <td>11.05.2016, 4:15pm</td>
+                        <td>Company D</td>
+                        <td>IT Programmer</td>
+                        <td>Seattle</td>
+                        <td>$5000</td>
+                        <td>Full time</td>
+                    </tr>
+                    <tr>
+                        <td>10.05.2016, 4:32pm</td>
+                        <td>Company E</td>
+                        <td>Developer</td>
+                        <td>San Francisco</td>
+                        <td>$7000</td>
+                        <td>Part time</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center">
+                <button class="btn btn-green">View All</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why People Choose Us Section -->
+    <section class="why-choose-us-section bg-light py-5">
+        <div class="container">
+            <h2 class="text-center">Why People Choose Us</h2>
+            <div class="row text-center mt-4">
+                <div class="col-md-4">
+                    <h4>Verified Employers</h4>
+                    <p>We provide only verified and reliable employers to our users.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Demanded Vacancies</h4>
+                    <p>Our job board has a huge database of vacancies from leading companies.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Employment Blog</h4>
+                    <p>Read our blog to get the latest news and advice about employment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

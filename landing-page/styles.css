@@ -1,0 +1,44 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.nav-link:hover {
+    color: #05eb3b !important;
+}
+
+.hero-section {
+    background: url('people-image.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 100px 0;
+}
+
+.categories-section a {
+    display: block;
+    padding: 10px 0;
+    font-size: 1.2em;
+}
+
+.latest-jobs-section {
+    background-color: #f9f9f9;
+}
+
+.why-choose-us-section h4 {
+    color: #28a745;
+}
+
+.btn-green {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.btn-green:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    color: white;
+}
+
+
+
