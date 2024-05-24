@@ -17,6 +17,7 @@
 
 .hero-area .content-block {
     margin: 20px 0;
+    padding-bottom: 8px;
 }
 
 .fa-plus {
@@ -117,8 +118,7 @@
 }
 
 .typer {
-    font-size: 2rem; /* Adjust the size as needed */
-    font-weight: bold; /* Optional: to make the text bold */
+    padding-left: 37px;
 }
 
 @keyframes moveLeftRight {
