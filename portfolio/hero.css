@@ -116,6 +116,11 @@
     color: #070707;
 }
 
+.typer {
+    font-size: 2rem; /* Adjust the size as needed */
+    font-weight: bold; /* Optional: to make the text bold */
+}
+
 @keyframes moveLeftRight {
     0%, 100% {
         transform: translateX(0);
