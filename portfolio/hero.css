@@ -68,7 +68,7 @@
 .image-block {
     text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the image block */
     align-items: center;
 }
 
@@ -150,7 +150,6 @@
     .hero-area {
         padding: 50px 20px;
         text-align: center;
-        padding-right: 200px;
     }
 
     .hero-content,
@@ -167,7 +166,17 @@
     }
 
     .image-wrapper img {
-        max-width: 90%;
-        margin: 0 auto;
+        display: block;
+        max-width: none; /* Ensure the image does not shrink */
+        height: auto;
+        border-radius: 10px;
+        margin: 0 auto; /* Center the image */
+    }
+
+    .fun-facts {
+        padding-right: 0;
+        margin-top: 20px;
     }
 }
+
+
