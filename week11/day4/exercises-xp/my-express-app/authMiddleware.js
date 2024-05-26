@@ -1,4 +1,3 @@
-// authMiddleware.js
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const pool = require('./db');

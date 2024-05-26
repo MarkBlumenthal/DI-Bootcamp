@@ -1,9 +1,8 @@
-// db.js
 const { Pool } = require('pg');
 require('dotenv').config();
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL, // Read from environment variable
+  connectionString: process.env.DATABASE_URL,
 });
 
 const createUserTable = async () => {
@@ -29,6 +28,7 @@ const createUserTable = async () => {
 createUserTable();
 
 module.exports = pool;
+
 
 
 
