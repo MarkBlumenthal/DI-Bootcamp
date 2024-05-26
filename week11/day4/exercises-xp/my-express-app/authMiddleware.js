@@ -2,7 +2,7 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const pool = require('./db');
 
-const JWT_SECRET = process.env.JWT_SECRET; // Ensure this matches the secret key used in authRoutes.js
+const JWT_SECRET = process.env.JWT_SECRET; 
 
 const authenticateToken = (req, res, next) => {
   const token = req.cookies.token;

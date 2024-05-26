@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const rateLimit = require('express-rate-limit');
 const nodemailer = require('nodemailer');
 const pool = require('./db');
-const authenticateToken = require('./authMiddleware'); // Import authenticateToken middleware
+const authenticateToken = require('./authMiddleware'); 
 const router = express.Router();
 
 const JWT_SECRET = process.env.JWT_SECRET;
